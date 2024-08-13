@@ -1,0 +1,36 @@
+header
+{
+    background-color: rgb(179, 179, 179);
+    text-align: center;
+    padding-top: 2px;
+}
+.nav{
+   list-style-type: none;
+   display: flex;
+   justify-content: center;
+   background-color:rgb(49, 45, 45) ;
+   color: white;
+   padding: 15px;
+}
+.nav li {
+    padding : 0px 20px 0px 20px;
+}
+table,tr,th,td{
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: 5px;
+}
+#Subsection-1{
+    margin-left: 100px;
+}
+.MainContentSection{
+    display: flex;
+    justify-content: space-around;
+}
+
+footer{
+    background-color: rgb(224, 224, 224);
+    padding: 15px;
+    margin: 10px;
+    text-align: center;
+}
