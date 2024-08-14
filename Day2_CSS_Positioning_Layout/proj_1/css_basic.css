@@ -1,0 +1,100 @@
+h1{
+    text-align: center;
+    color: rgb(80, 79, 79);
+    background-color:whitesmoke;
+    padding:10px;
+    margin: 0;
+}
+.nav{
+    display: flex;
+    list-style-type: none;
+    justify-content: center;
+    background-color:#363636;
+    margin:0;
+    padding:8px;
+}
+.nav li{
+    margin:0px 30px 0px 30px;
+    
+}
+li a {
+    text-decoration: none;
+    color:white;
+  }
+  
+.subsection-1{
+    background-color:rgb(226, 225, 225);
+    margin:20px 15px;
+    padding:10px;
+    font-size:1.7cap;
+}
+.subsection-2
+{
+    display:flex;
+    justify-content: space-around;
+}
+.small-box
+{
+    width: 270px;
+    height: 120px;
+    border: 2px grey solid ;
+    padding: 20px 10px;
+    font-size: medium;
+}
+.box-head{
+    font-size: 25px;
+    margin: 0px;
+}
+.subsection-3
+{
+    background-color:rgb(226, 225, 225) ;
+    margin:20px 15px;
+    padding:10px;
+    font-size:1.7cap;
+    
+}
+ul{
+    list-style-type: none;
+}
+footer{
+    background-color: rgb(224, 224, 224);
+    padding: 15px;
+    margin: 10px;
+    text-align: center;
+}
+.unorder-list li::marker{
+    content: "👉";
+}
+.subsection-1 p::first-line
+{
+    color: blue;
+}
+.small-box:hover
+{
+    border-radius: 20px;
+    border-color: black;
+    background-color: bisque;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.nav li:hover{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: cornsilk;
+    text-decoration:underline;
+}
+
+#btn
+{
+    border-radius: 10px;
+    background-color: blue;
+    font-size: larger;
+}
+#para-on-hover{
+    display: none;
+}
+#btn:hover + #para-on-hover {
+    display: block;
+} 
+#btn::after
+{
+    content: "╰┈➤";
+}
