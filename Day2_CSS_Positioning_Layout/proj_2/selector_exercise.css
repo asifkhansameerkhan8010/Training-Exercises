@@ -30,19 +30,19 @@ li a
     text-decoration: none;
     color:white;
 }
-.subsection{
+.sub-section{
     background-color: rgb(226, 225, 225) ;
     margin:20px;
     padding: 20px;
 }
-.classselector
+.class-selector
 {
     background-color: Yellow;
 }
-#subsection-4{
+#sub-section-4{
     color: red;
 }
-#subsection-4:hover{
+#sub-section-4:hover{
    border-radius: 10px;
    border:2px rgb(0, 0, 0) dotted;
 
@@ -55,7 +55,7 @@ input[type="text"]
     padding: 10px;
     border-radius: 10px;
 }
-#subsection-5 p{
+#sub-section-5 p{
  padding:10px 0px;
 }
 #name{
@@ -65,16 +65,16 @@ div h4{
   background-color: aquamarine;
   margin-bottom:2px;
 }
-#subsection-7 ul>li::before{
+#sub-section-7 ul>li::before{
    content:"✔"
 }
 ul{
     list-style-type: none;
 }
-#subsection-8 div+p{
+#sub-section-8 div+p{
     color: yellow;
 }
-#subsection-9 div~p{
+#sub-section-9 div~p{
     color: yellow;
 }
 
