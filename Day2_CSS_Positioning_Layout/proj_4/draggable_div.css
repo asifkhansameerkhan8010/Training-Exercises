@@ -27,6 +27,7 @@ h1{
     top:50px;
     left:20px;
     color: white;
+    cursor: pointer;
 }
 .outer-conatiner
 {
@@ -37,6 +38,7 @@ h1{
     position: absolute;
     left:20px;
     color: white;
+    cursor: pointer;
 }
 footer{
     position: absolute;
