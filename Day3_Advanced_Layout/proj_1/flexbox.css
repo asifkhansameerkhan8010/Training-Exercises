@@ -1,50 +1,106 @@
-body{
+body {
     font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
 }
-h1{
+
+h1 {
     text-align: center;
     color: rgb(80, 79, 79);
-    background-color:whitesmoke;
-    padding:10px;
+    background-color: whitesmoke;
+    padding: 10px;
     margin: 0;
     font-weight: 100;
 }
-.navbar{
+
+.navbar {
     display: flex;
     list-style-type: none;
     justify-content: center;
-    background-color:#363636;
-    margin:0;
-    padding:8px;
+    background-color: #363636;
+    margin: 0;
+    padding: 8px;
 }
-.navbar li{
-    margin:0px 30px;
-    
+
+.navbar li {
+    margin: 0px 30px;
 }
+
 li a {
     text-decoration: none;
-    color:white;
+    color: white;
 }
-.sub-section{
+
+.sub-section {
     display: flex;
     flex-wrap: wrap;
     margin: 50px;
+    justify-content: space-around;
 }
-.cn-box
-{
+
+.cn-box {
     background-color: #04aa49;
-    margin:20px;
+    margin: 20px;
     flex-basis: 28%;
     text-align: center;
     flex-grow: 1;
     padding: 20px;
     color: white;
 }
-footer{
-    position: absolute;
-    bottom: 0;
-    width: 100%;
+
+footer {
     text-align: center;
     background-color: rgb(214, 208, 208);
     padding: 15px;
+}
+
+
+@media (max-width: 1024px) {
+    .sub-section {
+        margin: 30px;
+    }
+
+    .navbar li {
+        margin: 0px 20px;
+    }
+
+    .cn-box {
+        flex-basis: 45%;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-wrap: wrap;
+        padding: 10px;
+    }
+
+    .navbar li {
+        margin: 10px 15px;
+    }
+
+    .cn-box {
+        flex-basis: 100%;
+        margin: 15px 0;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: medium;
+        padding: 8px;
+    }
+
+    .navbar li {
+        margin: 5px 10px;
+    }
+
+    .sub-section {
+        margin: 20px;
+    }
+
+    .cn-box {
+        padding: 15px;
+        font-size: smaller;
+    }
 }

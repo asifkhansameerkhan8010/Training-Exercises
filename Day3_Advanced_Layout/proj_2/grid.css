@@ -1,7 +1,10 @@
-body{
+body {
     font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
 }
-h1{
+
+h1 {
     color: white;
     background-color: rgb(24, 175, 24);
     font-weight: 400;
@@ -9,25 +12,54 @@ h1{
     padding: 15px;
     font-size: larger;
 }
-.main-container{
+
+.main-container {
     display: grid;
     grid-template-columns: 1fr 2fr;
-    gap:10px;
+    gap: 10px;
     min-height: 80vh;
 }
-.cnt{
-    
+
+.cnt {
     padding: 20px;
 }
-.main-content{
+
+.main-content {
     background-color: rgb(196, 197, 197);
 }
-.sidebar{
+
+.sidebar {
     background-color: rgb(224, 221, 221);
 }
-footer{
+
+footer {
     text-align: center;
     padding: 10px;
-    background-color: rgb(24, 175, 24) ;
+    background-color: rgb(24, 175, 24);
     margin-top: 10px;
+}
+
+@media (max-width: 768px) {
+    .main-container {
+        grid-template-columns: 1fr; 
+    }
+
+    .sidebar {
+        order: 1; 
+    }
+
+    .main-content {
+        order: 2;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: medium;
+        padding: 10px;
+    }
+
+    .cnt {
+        padding: 10px;
+    }
 }
