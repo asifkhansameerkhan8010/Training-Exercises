@@ -37,6 +37,7 @@ body {
 
 .icon {
     font-size: 1.5em;
+    position: relative;
     color: #848884;;
 }
 .three::after{
@@ -51,11 +52,17 @@ body {
     font-size: smaller;
    
 }
+.quesm{
+    background-color: rgb(201, 196, 194);
+    padding: 0px 9px;
+    border-radius: 50%;
+}
 /* Sidebar */
 .vertical-navbar {
     border-right:1px solid rgb(192, 192, 206);
     grid-area: vn;
     padding: 20px;
+    position: relative;
 }
 .heading{
    margin: 20px 3px;
@@ -66,7 +73,6 @@ body {
     gap: 15px;
     margin-bottom: 20px;
 }
-
 .user-image {
     height: 40px;
     width: 40px;
@@ -76,6 +82,51 @@ body {
 .personal-info .title {
     font-size: small;
     color: grey;
+}
+.rel{
+   position: absolute;
+   bottom:0;
+   left:20px;
+}
+.paras{
+    padding: 20px;
+}
+.export {
+    position: relative;
+}
+
+.dropdowns {
+    visibility:hidden;
+    border-radius: 5px;
+    margin-top: 20px;
+    padding: 0;
+    list-style-type: none;
+    width: 120px;
+    background-color: rgb(218, 218, 218);
+    position: absolute;
+    top: 10px;
+    right:20px;
+    z-index: 1;
+}
+
+.dropdowns a {
+    color: rgb(110, 110, 110);
+    text-decoration: none;
+    display: block;
+    padding: 5px;
+    font-size: smaller;
+}
+
+.dropdowns a:hover {
+    color: blue;
+    background-color: #f0f0f0;
+}
+
+.export:hover .dropdowns{
+    visibility: visible;
+}
+.export:focus .dropdowns{
+    visibility: visible;
 }
 
 /* Dashboard Links */
@@ -127,6 +178,7 @@ body {
 
 .contents-in-head {
     margin: 20px auto;
+    line-height: 30px;
 }
 .options{
     margin-top: auto; 
@@ -139,6 +191,18 @@ body {
     column-gap: 20px;
     align-items:end;
 }
+
+.options a:hover {
+    border-bottom: 2px solid rgb(41, 35, 131);
+    color: rgb(41, 35, 131);
+}
+
+.options a:focus {
+    border-bottom: 2px solid rgb(41, 35, 131);
+    color: rgb(41, 35, 131);
+    outline: none;
+}
+
 .options a{
     text-decoration: none;
 }
@@ -173,21 +237,49 @@ body {
     padding: 3px;
     background-color: white;
     border: 1px solid #757474;
+    border-radius: 5px;
 }
 table {
     margin-top: 20px;
     width: 100%;
     border-collapse: collapse;
 }
-th, td {
 
-    padding: 8px;
+th, td {
+    font-size: small;
+    padding: 12px;
     text-align: left;
 }
 th {
    border-bottom:1px solid #848884;
 }
-
+.status{
+    padding:1px;
+    border-radius: 5px;
+    box-sizing: border-box;
+    width: 70px;
+    display: inline-block;
+}
+.cancelled{
+ color: rgb(233, 76, 76);
+ background-color: rgb(250, 146, 146);
+ text-align: center;
+}
+.restitution{
+  color: orange;
+  background-color: rgb(255, 209, 123);
+  text-align: center;
+}
+.completed{
+  background-color:#90EE90;
+  color:#42af42;
+  text-align: center;
+}
+.continue{
+    color:black;
+    background-color: #d8e2d8;
+    text-align: center;
+}
 /* Footer */
 footer {
     grid-area: f;
@@ -221,12 +313,13 @@ footer {
 }
 
 .options a:hover{
-    border-bottom: 2px solid red;
-
+    border-bottom: 2px solid rgb(41, 35, 131);
+    color:rgb(41, 35, 131);
+    font-weight: 600;
 }
 .options{
     position: relative;
-    border-bottom: 2px solid black;
+    border-bottom: 2px solid  rgb(192, 192, 206);
     height: 10px;
 }
 a
@@ -236,4 +329,141 @@ a
 ul{
     top: 3px;
     position: absolute;
+}
+.btn-of-ts:hover, .button-section button:hover {
+    border: 2px solid rgb(41, 35, 131);
+    color: rgb(41, 35, 131);
+}
+tbody tr:hover>td{
+    font-weight: 600;
+    cursor: pointer;
+    background-color: #d8e2d8;
+    color: rgb(41, 35, 131);
+}
+tbody tr:hover .fa-regular {
+ font-size: large;
+ font-weight: bolder;
+ color: BLACK;
+}
+/*pop ups of side*/
+.popup{
+    color:  rgb(41, 35, 131);
+    position:absolute;
+    border-radius: 5px;
+    font-size: small;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 300;
+    z-index: 1;
+    display: block;
+    bottom: 20px;
+    left: 50px;
+    background-color: white;
+    box-shadow: -4px 6px 4px rgba(0, 0, 0, 0.3);
+    visibility: hidden;
+}
+.icon:hover>.popup{
+    visibility: visible;
+}
+.aricon{
+    border: 1px solid grey;
+    border-radius: 5px;
+    display: inline-block;
+    box-sizing: border-box;
+    padding:2px;
+    cursor: pointer;
+    background-color: #fff;
+}
+.aricon:hover>.ar{
+    color:blue;
+    font-weight: bold;
+}
+.search-container{
+    position: relative;
+}
+.fa-magnifying-glass{
+    position: absolute;
+    top:3.5px;
+    left:2px;
+}
+.ham-menu{
+    border:2px solid rgb(4, 21, 116);
+    width:40%;
+    border-radius: 5px;
+    z-index: 1;
+    position: absolute;
+    top:70px;
+    left:390px;
+    background-color: #d8e2d8;
+    visibility: hidden;
+  }
+  .ham{
+   display: none;
+  }
+/*Resposive Design*/
+
+
+  @media screen and (max-width:768px)
+  {.container
+    {
+        grid-template-areas: "nm" "nm" "nm"
+        "vn" "vn" "vn"
+        "cs""cs""cs"
+        "ts""ts""ts"
+        "f""f""f";
+        grid-template-columns: 1fr;
+        grid-template-rows:auto auto auto ;
+    }
+    .navigation-menu nav{
+        flex-direction: row;
+        gap: 40px;
+        height: 100%;
+    }
+    .navigation-menu{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        height: auto;
+        position:sticky;
+    }
+    .ham{
+        display: block;
+    }
+    .ham:focus +.ham-menu{
+        visibility: visible;
+    }
+    .dash-contents{
+        display: none;
+    }
+    .rel{
+        display: none;
+    }
+    .heading{
+        display: none;
+    }
+    .tables{
+        width: 100%;
+        height:auto;
+        overflow: hidden;
+    }
+    .icons-flex{
+        position: relative;
+    }
+    .popup{
+        position: absolute;
+        left:2px;
+    }
+  }
+
+@media screen and (max-width:350px){
+    .container
+    {
+        grid-template-areas: "nm" 
+        "vn" 
+        "cs"
+        "ts"
+        "f";
+        grid-template-columns: 2fr;
+        grid-template-rows:1fr 1fr 5fr ;
+    }
+    
 }

@@ -17,14 +17,28 @@
                 <i style="color: rgb(41, 35, 131);" class="fa-solid fa-2x fa-hat-cowboy"></i>
             </div>
             <nav class="icons-flex">
-                <i class="fa-solid fa-chart-pie icon"></i>
-                <i class="fa-solid fa-chart-simple icon"></i>
-                <i class="fa-solid fa-border-all icon"></i>
-                <i class="fa-solid fa-dice-d6 icon"></i>
-                <i class="fa-solid fa-cube icon"></i>
-                <i class="fa-solid fa-circle-notch icon"></i>
+                <i class="fa-solid fa-chart-pie icon"><span class="popup">Pie</span></i>
+                <i class="fa-solid fa-chart-simple icon"><span class="popup">Analytics</span></i>
+                <i class="fa-solid fa-border-all icon"><span class="popup">Dashboards</span></i>
+                <i class="fa-solid fa-dice-d6 icon"><span class="popup">Orders</span></i>
+                <i class="fa-solid fa-cube icon"><span class="popup">Cart</span></i>
+                <i class="fa-solid fa-circle-notch icon"><span class="popup">Theme</span></i>
             </nav>
+            <button class="ham">☰</button>
+            <div class="ham-menu">
+                <p class="para three">Product Management</p>
+                <p class="para three">Sales Management</p>
+                <p class="para three">Order Management</p>
+                <p class="para">Customer Statics</p>
+                <p class="para">Daily Order</p>
+                <p class="para">Order Details</p>
+                <p class="para">Leaderboards</p>
+                <p class="para">Supplier Management</p>
+                <p class="para">Supplier Details</p>
+                <p class="para">User Analytics</p>
+        </div>
         </aside>
+        
         <aside class="vertical-navbar">
             <div class="profile">
                 <img src="../assets/download.png" alt="profile" class="user-image">
@@ -46,10 +60,15 @@
                 <p class="para">Supplier Details</p>
                 <p class="para">User Analytics</p>
             </nav>
+            <div class="rel">
+                <p class=" paras"><i class="fa-solid fa-circle-question"></i>Help Started</p>
+                <p class=" paras"><i class="fa-solid fa-circle-plus"></i>Add New Folder</p>
+            </div>
+            
         </aside>
         <main class="content-section">
             <header class="heads-on-cnt">
-                <h2 class="dark">Order Details</h2>
+                <h2 class="dark heads">Order Details<span class="quesm"><i style="color:rgb(255, 255, 255);" class="fa-solid fa-2xs fa-question"></i></span></h2>
                 <div class="button-section">
                     <button class="buttons">Open Documentation</button>
                     <button class="buttons">Setup Details</button>
@@ -75,12 +94,20 @@
         <section class="table-section">
             <div class="search-and-buttons">
                 <div class="search-container">
-                    <input type="text" placeholder="Search for order ID,customer,order status or something..." class="search-bar">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" placeholder="      Search for order ID,customer,order status or something..." class="search-bar">
                 </div>
                 <div class="btn-container">
-                    <button class="btn-of-ts">Filters</button>
-                    <button class="btn-of-ts">Attachment</button>
-                    <button class="btn-of-ts">Export</button>
+                    <button class="btn-of-ts"><i class="fa-solid fa-filter"></i> Filters</button>
+                    <button class="btn-of-ts"><i class="fa-solid fa-paperclip"></i>  Attachment</button>
+                    <button class="btn-of-ts export">
+                        <i class="fa-solid fa-file-arrow-down"></i> Export
+                        <ul class="dropdowns">
+                            <li><a href="#">Export as .xlsx</a></li>
+                            <li><a href="#">Export as .doc</a></li>
+                        </ul>
+                    </button>
+                    
                 </div>
             </div>
             <div class="tables">
@@ -100,105 +127,73 @@
                     <tbody>
                         <tr>
                             <td>AKN12508</td>
-                            <td class="dark">AKN12508</td>
-                            <td>AKN12508</td>
-                            <td>AKN12508</td>
-                            <td class="dark">AKN12508</td>
-                            <td class="status">AKN12508</td>
-                            <td>AKN12508</td>
-                            <td>..</td>
+                            <td class="dark">Asifkhan</td>
+                            <td>Nike Tshirt</td>
+                            <td>12.04.2024</td>
+                            <td class="dark">$24.90</td>
+                            <td ><p class="status completed">Completed</p></td>
+                            <td>Credit Card</td>
+                            <td><i class="fa-regular fa-pen-to-square"></i></td>
                         </tr>
                         <tr>
-                            <td>AKN12508</td>
-                            <td class="dark">AKN12508</td>
-                            <td>AKN12508</td>
-                            <td>AKN12508</td>
-                            <td class="dark">AKN12508</td>
-                            <td class="status">AKN12508</td>
-                            <td>AKN12508</td>
-                            <td>..</td>
-                        </tr> <tr>
-                            <td>AKN12508</td>
-                            <td class="dark">AKN12508</td>
-                            <td>AKN12508</td>
-                            <td>AKN12508</td>
-                            <td class="dark">AKN12508</td>
-                            <td class="status">AKN12508</td>
-                            <td>AKN12508</td>
-                            <td>..</td>
-                        </tr> <tr>
-                            <td>AKN12508</td>
-                            <td class="dark">AKN12508</td>
-                            <td>AKN12508</td>
-                            <td>AKN12508</td>
-                            <td class="dark">AKN12508</td>
-                            <td class="status">AKN12508</td>
-                            <td>AKN12508</td>
-                            <td>..</td>
-                        </tr> <tr>
-                            <td>AKN12508</td>
-                            <td class="dark">AKN12508</td>
-                            <td>AKN12508</td>
-                            <td>AKN12508</td>
-                            <td class="dark">AKN12508</td>
-                            <td class="status">AKN12508</td>
-                            <td>AKN12508</td>
-                            <td>..</td>
-                        </tr> <tr>
-                            <td>AKN12508</td>
-                            <td class="dark">AKN12508</td>
-                            <td>AKN12508</td>
-                            <td>AKN12508</td>
-                            <td class="dark">AKN12508</td>
-                            <td class="status">AKN12508</td>
-                            <td>AKN12508</td>
-                            <td>..</td>
-                        </tr> <tr>
-                            <td>AKN12508</td>
-                            <td class="dark">AKN12508</td>
-                            <td>AKN12508</td>
-                            <td>AKN12508</td>
-                            <td class="dark">AKN12508</td>
-                            <td class="status">AKN12508</td>
-                            <td>AKN12508</td>
-                            <td>..</td>
-                        </tr> <tr>
-                            <td>AKN12508</td>
-                            <td class="dark">AKN12508</td>
-                            <td>AKN12508</td>
-                            <td>AKN12508</td>
-                            <td class="dark">AKN12508</td>
-                            <td class="status">AKN12508</td>
-                            <td>AKN12508</td>
-                            <td>..</td>
-                        </tr> <tr>
-                            <td>AKN12508</td>
-                            <td class="dark">AKN12508</td>
-                            <td>AKN12508</td>
-                            <td>AKN12508</td>
-                            <td class="dark">AKN12508</td>
-                            <td class="status">AKN12508</td>
-                            <td>AKN12508</td>
-                            <td>..</td>
+                            <td>AKN12509</td>
+                            <td class="dark">John Doe</td>
+                            <td>Adidas Sneakers</td>
+                            <td>13.04.2024</td>
+                            <td class="dark">$75.00</td>
+                            <td ><p class="status cancelled">Cancelled</p></td>
+                            <td>PayPal</td>
+                            <td><i class="fa-regular fa-pen-to-square"></i></td>
                         </tr>
                         <tr>
-                            <td>AKN12508</td>
-                            <td class="dark">AKN12508</td>
-                            <td>AKN12508</td>
-                            <td>AKN12508</td>
-                            <td class="dark">AKN12508</td>
-                            <td class="status">AKN12508</td>
-                            <td>AKN12508</td>
-                            <td>..</td>
-                        </tr> <tr>
-                            <td>AKN12508</td>
-                            <td class="dark">AKN12508</td>
-                            <td>AKN12508</td>
-                            <td>AKN12508</td>
-                            <td class="dark">AKN12508</td>
-                            <td class="status">AKN12508</td>
-                            <td>AKN12508</td>
-                            <td>..</td>
+                            <td>AKN12510</td>
+                            <td class="dark">Jane Smith</td>
+                            <td>Levi's Jeans</td>
+                            <td>14.04.2024</td>
+                            <td class="dark">$45.00</td>
+                            <td ><p class="status continue">Continue</p></td>
+                            <td>Bank Transfer</td>
+                            <td><i class="fa-regular fa-pen-to-square"></i></td>
+                        </tr>
+                        <tr>
+                            <td>AKN12511</td>
+                            <td class="dark">Emma Brown</td>
+                            <td>Gucci Handbag</td>
+                            <td>15.04.2024</td>
+                            <td class="dark">$150.00</td>
+                            <td ><p class="status restitution">Restitution</p></td>
+                            <td>Credit Card</td>
+                            <td><i class="fa-regular fa-pen-to-square"></i></td>
+                        </tr>
+                        <tr>
+                            <td>AKN12512</td>
+                            <td class="dark">Michael Lee</td>
+                            <td>Puma Jacket</td>
+                            <td>16.04.2024</td>
+                            <td class="dark">$60.00</td>
+                            <td ><p class="status completed">Completed</p></td>
+                            <td>Bank Transfer</td>
+                            <td><i class="fa-regular fa-pen-to-square"></i></td>
+                        </tr>
+                        <tr>
+                            <td>AKN12513</td>
+                            <td class="dark">Sophia Davis</td>
+                            <td>Ray-Ban Sunglasses</td>
+                            <td>17.04.2024</td>
+                            <td class="dark">$85.00</td>
+                            <td ><p class="status continue">Continue</p></td>
+                            <td>PayPal</td>
+                            <td><i class="fa-regular fa-pen-to-square"></i></td>
+                        </tr>
+                        <tr>
+                            <td>AKN12514</td>
+                            <td class="dark">Liam Wilson</td>
+                            <td>Tissot Watch</td>
+                            <td>18.04.2024</td>
+                            <td class="dark">$250.00</td>
+                            <td ><p class="status cancelled">Cancelled</p></td>
+                            <td>Credit Card</td>
+                            <td><i class="fa-regular fa-pen-to-square"></i></td>
                         </tr>
                     </tbody>
                 </table>
@@ -210,8 +205,8 @@
                 <span >The page you're on</span>
                 <button class="button">1</button>
                 <span style="font-size: larger;">|</span>
-                <i class="fa-solid fa-circle-arrow-left"></i>
-                <i class="fa-solid fa-circle-arrow-right"></i>
+                <span class="aricon"><i class="fa-solid fa-2xs fa-arrow-left-long ar"></i></span>
+                <span class="aricon"><i class="fa-solid fa-2xs fa-arrow-right-long ar"></i></span>
                 
             </div>
         </footer>
