@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Details</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            display: flex;
+            min-height: 100vh;
+            background-color: #f8f9fa;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            width: 250px;
+            background-color: #ffffff;
+            border-right: 1px solid #e0e0e0;
+            padding: 20px;
+        }
+
+        .sidebar-header {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .sidebar-header img {
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            margin-right: 10px;
+        }
+
+        .sidebar nav ul {
+            list-style: none;
+        }
+
+        .sidebar nav ul li {
+            margin: 1rem 0;
+        }
+
+        .sidebar nav ul li a {
+            text-decoration: none;
+            color: #333;
+            display: flex;
+            align-items: center;
+        }
+
+        .sidebar nav ul li a i {
+            margin-right: 10px;
+        }
+
+        /* Main Content */
+        .main-content {
+            flex-grow: 1;
+            padding: 20px;
+        }
+
+        /* Header */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .header .user-info {
+            display: flex;
+            align-items: center;
+            font-size: 1rem;
+            font-weight: bold;
+        }
+
+        .header .user-info i {
+            margin-right: 10px;
+            font-size: 1.5rem;
+        }
+
+        .header .setup-details {
+            background-color: #007bff;
+            color: #ffffff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+        }
+
+        .header .setup-details i {
+            margin-right: 10px;
+        }
+
+        /* Order Details Section */
+        .order-details {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .order-details h1 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+
+        .order-details .filters {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .order-details .filters input[type="text"] {
+            padding: 10px;
+            border: 1px solid #ced4da;
+            border-radius: 5px;
+            width: 300px;
+        }
+
+        .order-details .filters button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+        }
+
+        .order-details .filters button i {
+            margin-right: 10px;
+        }
+
+        /* Table */
+        .table-container {
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        table thead {
+            background-color: #f1f1f1;
+        }
+
+        table thead th {
+            padding: 15px;
+            text-align: left;
+            font-size: 14px;
+            color: #333;
+        }
+
+        table tbody tr {
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        table tbody td {
+            padding: 15px;
+            text-align: left;
+            font-size: 14px;
+            color: #333;
+        }
+
+        /* Status Badges */
+        .badge {
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 12px;
+            display: inline-block;
+        }
+
+        .badge.complete {
+            background-color: #28a745;
+            color: white;
+        }
+
+        .badge.canceled {
+            background-color: #dc3545;
+            color: white;
+        }
+
+        .badge.resitute {
+            background-color: #ffc107;
+            color: white;
+        }
+
+        .badge.continue {
+            background-color: #17a2b8;
+            color: white;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .sidebar {
+                width: 100%;
+                border-right: none;
+                border-bottom: 1px solid #e0e0e0;
+            }
+
+            .main-content {
+                padding: 10px;
+            }
+
+            .header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .order-details .filters {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .order-details .filters input[type="text"] {
+                width: 100%;
+                margin-bottom: 10px;
+            }
+
+            .table-container {
+                overflow-x: scroll;
+            }
+
+            table thead th:nth-child(3),
+            table tbody td:nth-child(3) {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <i class="fas fa-user-circle"></i> Helen Denriacs
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+                <li><a href="#"><i class="fas fa-box-open"></i> Product Management</a></li>
+                <li><a href="#"><i class="fas fa-chart-bar"></i> Sales Management</a></li>
+                <li><a href="#"><i class="fas fa-truck"></i> Order Management</a></li>
+                <li><a href="#"><i class="fas fa-users"></i> Customer Statistics</a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <div class="header">
+            <div class="user-info">
+                <i class="fas fa-user-circle"></i> Helen Denriacs
+            </div>
+            <button class="setup-details">
+                <i class="fas fa-cog"></i> Setup Details
+            </button>
+        </div>
+
+        <div class="order-details">
+            <h1>Order Details</h1>
+            <div class="filters">
+                <input type="text" placeholder="Search for order ID, customer, order status, etc.">
+                <div>
+                    <button><i class="fas fa-filter"></i> Filters</button>
+                    <button><i class="fas fa-file-export"></i> Export as XLSX</button>
+                </div>
+            </div>
+
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Order ID</th>
+                            <th>Customer</th>
+                            <th>Order</th>
+                            <th>Delivery Date</th>
+                            <th>Delivery Pricing</th>
+                            <th>Delivery Status</th>
+                            <th>Payment</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>AKN12508</td>
+                            <td>Olivera Nules</td>
+                            <td>Nike T-Shirt</td>
+                            <td>12.04.2021</td>
+                            <td>$24.90</td>
+                            <td><span class="badge resitute">Resitute</span></td>
+                            <td>Credit Card</td>
+                        </tr>
+                        <tr>
+                            <td>SRT3123</td>
+                            <td>Alexandre Seifelli</td>
+                            <td>Adidas Hat</td>
+                            <td>22.05.2021</td>
+                            <td>$19.90</td>
+                            <td><span class="badge complete">Complete</span></td>
+                            <td>Bank Transfer</td>
+                        </tr>
+                        <tr>
+                            <td>TML30321</td>
+                            <td>Selman Kalman</td>
+                            <td>Hummel Sneakers</td>
+                            <td>08.03.2021</td>
+                            <td>$54.90</td>
+                            <td><span class="badge canceled">Canceled</span></td>
+                            <td>Credit Card</td>
+                        </tr>
+                        <tr>
+                            <td>OKN12409</td>
+                            <td>Doner Zules</td>
+                            <td>Nike Shoes</td>
+                            <td>02.07.2021</td>
+                            <td>$89.90</td>
+                            <td><span class="badge continue">Continue</span></td>
+                            <td>Bank Transfer</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -400,8 +400,6 @@ tbody tr:hover .fa-regular {
    display: none;
   }
 /*Resposive Design*/
-
-
   @media screen and (max-width:768px)
   {.container
     {
@@ -453,7 +451,6 @@ tbody tr:hover .fa-regular {
         left:2px;
     }
   }
-
 @media screen and (max-width:350px){
     .container
     {
@@ -466,4 +463,48 @@ tbody tr:hover .fa-regular {
         grid-template-rows:1fr 1fr 5fr ;
     }
     
+}
+/* Large Screen */
+@media screen and (min-width:1024px) {
+    .container {
+        grid-template-areas:
+            "nm vn cs"
+            "nm vn ts"
+            "nm vn f";
+        grid-template-columns: 80px 350px 1fr; /* Increased width for sidebar */
+        grid-template-rows: auto auto auto;
+    }
+
+    .vertical-navbar {
+        padding: 30px; /* Increase padding for larger screens */
+    }
+
+    .content-section {
+        padding: 30px; /* Add more padding to content section */
+    }
+
+    .table-section {
+        padding: 20px 30px; /* Add more padding to the table section */
+    }
+
+    .search-and-buttons {
+        padding: 20px; /* Increase padding for search and buttons */
+    }
+
+    .footer {
+        padding: 15px 30px; /* Adjust footer padding */
+    }
+
+    .icons-flex {
+        gap: 30px; /* Increase the gap between icons */
+    }
+
+    .export .dropdowns {
+        width: 150px; /* Expand the dropdown for more content */
+    }
+
+    .ham-menu {
+        top: 90px;
+        left: 450px; /* Adjust position for larger screens */
+    }
 }
