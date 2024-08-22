@@ -1,0 +1,118 @@
+body{
+    padding :0;
+    margin:0;
+    height:fit-content;
+    width: fit-content;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.container{
+    display:flex;
+    width: 100vw;
+    height:100vh;
+}
+
+
+
+
+
+
+
+
+
+/* Tooltip */
+.tooltip {
+    grid-area: tt;
+    width:0.2%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2vw; 
+    gap: 3vh;
+    background: #f5f5f5;
+}
+
+/* Logo styling */
+.tooltip .logo {
+    margin-bottom: 1vh;
+    font-size: 1.3vw; 
+
+}
+
+/* Icon container styling */
+.icons-flex {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4vh; 
+}
+
+/* Icon styling */
+.icon {
+    position: relative;
+    font-size: 1.3vw; 
+    color: rgb(172, 172, 172);
+    cursor: pointer;
+}
+
+/* Popup tooltip styling */
+
+.popup {
+    color: rgb(41, 35, 131);
+    position: absolute; 
+    border-radius: 2px;
+    transform: translateY(-50%);
+    font-size: 0.8em;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 300;
+    z-index: 1;
+    display: block;
+    bottom: 0.4rem;
+    left: 0.6rem;
+    padding: 0.1rem;
+    background-color: white;
+    visibility: hidden;
+    box-shadow: -0.4rem 0.6rem 0.4rem rgba(0, 0, 0, 0.3);
+}
+/* Show popup on hover */
+.icon:hover .popup {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+
+
+
+
+
+
+
+.sidebar {
+    background-color:yellow;
+    width:20%;
+   
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.cons{
+    width:76%;
+    padding: 1vw; 
+    background-color: chartreuse;
+}

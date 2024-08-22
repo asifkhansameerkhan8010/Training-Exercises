@@ -5,8 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="last.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+</head>
 
 <body>
     <!-- Main Container -->
@@ -29,15 +30,15 @@
 
 
             <!-- Sidebar Section -->
-            <div class="sidebar">
-                <div class="profile">
-                    <img src="assets/download.png" alt="profile" class="user-image">
-                    <div class="personal-info">
-                        <p class="name dark">Helen Derinlacs<span class="arrow">▼</span></p>
-                        <p class="title">Sales Manager</p>
+            <aside class="sidebar">
+                <div class="sidebar-container">
+                    <div class="profile">
+                        <img src="../../assets/download.png" alt="profile" class="user-image">
+                        <div class="personal-info">
+                            <p class="name dark">Helen Derinlacs<span class="arrow">▼</span></p>
+                            <p class="title">Sales Manager</p>
+                        </div>
                     </div>
-                </div>
-                <div class="dasboard">
                     <h4 class="heading dark">Dashboard</h4>
                     <nav class="dash-contents">
                         <p class="para three">Product Management<span class="arrow">▼</span></p>
@@ -51,19 +52,19 @@
                         <p class="para">Supplier Details</p>
                         <p class="para">User Analytics</p>
                     </nav>
+                    <div class="rel">
+                        <p class=" paras"><i class="fa-solid fa-circle-question circle-icon"></i>Help Started</p>
+                        <p class=" paras"><i class="fa-solid fa-circle-plus circle-icon"></i>Add New Folder</p>
+                    </div>
                 </div>
-                <div class="rel">
-                    <p class=" paras"><i class="fa-solid fa-circle-question circle-icon"></i>Help Started</p>
-                    <p class=" paras"><i class="fa-solid fa-circle-plus circle-icon"></i>Add New Folder</p>
-                </div>
-            </div>
+            </aside>
 
 
             <div class="cons">
                 <!-- Content Section -->
                 <section class="content-section">
                     <header class="content-header">
-                        <p class="dark heads">Order Details<i class="fa-solid fa-circle-question q-icon"></i></p>
+                        <h1 class="dark heads">Order Details<i class="fa-solid fa-circle-question q-icon"></i></h1>
                         <div class="button-section">
                             <button class="buttons">Open Documentation</button>
                             <button class="buttons">Setup Details</button>
@@ -113,20 +114,8 @@
                                     <li><a href="#">Export as .doc</a></li>
                                 </ul>
                             </button>
-                            <button class="btn-of-sc hiddenbt"></button>
                         </div>
-                        
-                        <div class="navbar-hidden">
-                            <div class="options-hidden">
-                                <ul>
-                                    <li><a href="#">All Orders</a></li>
-                                    <li><a href="#">Completed</a></li>
-                                    <li><a href="#">Continuing</a></li>
-                                    <li><a href="#">Restitute</a></li>
-                                    <li><a href="#">Cancelled</a></li>
-                                </ul>
-                            </div>
-                        </div>
+
                     </div>
                 </div>
 
@@ -139,137 +128,136 @@
                                 <tr>
                                     <th class="three dark">Order ID</th>
                                     <th class="three dark">Customer</th>
-                                    <th class="dark hidden2">Order</th>
-                                    <th class="three dark hidden2">Delivery Date</th>
-                                    <th class="three dark hidden3">Delivery Pricing</th>
-                                    <th class="three dark hidden2">Delivery Status</th>
+                                    <th class="dark">Order</th>
+                                    <th class="three dark">Delivery Date</th>
+                                    <th class="three dark">Delivery Pricing</th>
+                                    <th class="three dark">Delivery Status</th>
                                     <th class="three dark">Payment</th>
-                                    <th class="dark hidden1">Edit</th>
+                                    <th class="dark">Edit</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
                                     <td>AKN12508</td>
                                     <td class="dark">Asifkhan</td>
-                                    <td class="hidden2">Tshirt</td>
-                                    <td class="hidden2">12.04.2024</td>
-                                    <td class="dark hidden3">$24.90</td>
-                                    <td class="hidden2">
+                                    <td>Tshirt</td>
+                                    <td>12.04.2024</td>
+                                    <td class="dark">$24.90</td>
+                                    <td>
                                         <p class="status completed">Completed</p>
                                     </td>
                                     <td>Credit Card</td>
-                                    <td class="hidden1"><i class="fa-regular fa-pen-to-square"></i></td>
+                                    <td><i class="fa-regular fa-pen-to-square"></i></td>
                                 </tr>
 
                                 <tr>
                                     <td>AKN12509</td>
                                     <td class="dark">John Doe</td>
-                                    <td class="hidden2">Shoe</td>
-                                    <td class="hidden2">13.04.2024</td>
-                                    <td class="dark hidden3">$75.00</td>
-                                    <td class="hidden2">
+                                    <td>Shoe</td>
+                                    <td>13.04.2024</td>
+                                    <td class="dark">$75.00</td>
+                                    <td>
                                         <p class="status cancelled">Cancelled</p>
                                     </td>
                                     <td>PayPal</td>
-                                    <td class="hidden1"><i class="fa-regular fa-pen-to-square"></i></td>
+                                    <td><i class="fa-regular fa-pen-to-square"></i></td>
                                 </tr>
-                                
                                 <tr>
                                     <td>AKN12510</td>
                                     <td class="dark">Jane Smith</td>
-                                    <td class="hidden2">Jeans</td>
-                                    <td class="hidden2">14.04.2024</td>
-                                    <td class="dark hidden3">$45.00</td>
-                                    <td class="hidden2">
+                                    <td>Jeans</td>
+                                    <td>14.04.2024</td>
+                                    <td class="dark">$45.00</td>
+                                    <td>
                                         <p class="status continue">Continue</p>
                                     </td>
                                     <td>Bank Transfer</td>
-                                    <td class="hidden1"><i class="fa-regular fa-pen-to-square"></i></td>
+                                    <td><i class="fa-regular fa-pen-to-square"></i></td>
                                 </tr>
                                 <tr>
                                     <td>AKN12511</td>
                                     <td class="dark">Emma </td>
-                                    <td class="hidden2">Handbag</td>
-                                    <td class="hidden2">15.04.2024</td>
-                                    <td class="dark hidden3">$150.00</td>
-                                    <td class="hidden2">
+                                    <td>Handbag</td>
+                                    <td>15.04.2024</td>
+                                    <td class="dark">$150.00</td>
+                                    <td>
                                         <p class="status restitution">Restitution</p>
                                     </td>
                                     <td>Credit Card</td>
-                                    <td class="hidden1"><i class="fa-regular fa-pen-to-square"></i></td>
+                                    <td><i class="fa-regular fa-pen-to-square"></i></td>
                                 </tr>
                                 <tr>
                                     <td>AKN12512</td>
                                     <td class="dark">Michael Lee</td>
-                                    <td class="hidden2">Jacket</td>
-                                    <td class="hidden2">16.04.2024</td>
-                                    <td class="dark hidden3">$60.00</td>
-                                    <td class="hidden2">
+                                    <td>Jacket</td>
+                                    <td>16.04.2024</td>
+                                    <td class="dark">$60.00</td>
+                                    <td>
                                         <p class="status completed">Completed</p>
                                     </td>
                                     <td>Bank Transfer</td>
-                                    <td class="hidden1"><i class="fa-regular fa-pen-to-square"></i></td>
+                                    <td><i class="fa-regular fa-pen-to-square"></i></td>
                                 </tr>
                                 <tr>
                                     <td>AKN12508</td>
                                     <td class="dark">Asifkhan</td>
-                                    <td class="hidden2">Tshirt</td>
-                                    <td class="hidden2">12.04.2024</td>
-                                    <td class="dark hidden3">$24.90</td>
-                                    <td class="hidden2">
+                                    <td>Tshirt</td>
+                                    <td>12.04.2024</td>
+                                    <td class="dark">$24.90</td>
+                                    <td>
                                         <p class="status completed">Completed</p>
                                     </td>
                                     <td>Credit Card</td>
-                                    <td class="hidden1"><i class="fa-regular fa-pen-to-square"></i></td>
+                                    <td><i class="fa-regular fa-pen-to-square"></i></td>
                                 </tr>
 
                                 <tr>
                                     <td>AKN12509</td>
                                     <td class="dark">John Doe</td>
-                                    <td class="hidden2">Shoe</td>
-                                    <td class="hidden2">13.04.2024</td>
-                                    <td class="dark hidden3">$75.00</td>
-                                    <td class="hidden2">
+                                    <td>Shoe</td>
+                                    <td>13.04.2024</td>
+                                    <td class="dark">$75.00</td>
+                                    <td>
                                         <p class="status cancelled">Cancelled</p>
                                     </td>
                                     <td>PayPal</td>
-                                    <td class="hidden1"><i class="fa-regular fa-pen-to-square"></i></td>
+                                    <td><i class="fa-regular fa-pen-to-square"></i></td>
                                 </tr>
                                 <tr>
                                     <td>AKN12510</td>
                                     <td class="dark">Jane Smith</td>
-                                    <td class="hidden2">Jeans</td>
-                                    <td class="hidden2">14.04.2024</td>
-                                    <td class="dark hidden3">$45.00</td>
-                                    <td class="hidden2">
+                                    <td>Jeans</td>
+                                    <td>14.04.2024</td>
+                                    <td class="dark">$45.00</td>
+                                    <td>
                                         <p class="status continue">Continue</p>
                                     </td>
                                     <td>Bank Transfer</td>
-                                    <td class="hidden1"><i class="fa-regular fa-pen-to-square"></i></td>
+                                    <td><i class="fa-regular fa-pen-to-square"></i></td>
                                 </tr>
                                 <tr>
                                     <td>AKN12511</td>
                                     <td class="dark">Emma </td>
-                                    <td class="hidden2">Handbag</td>
-                                    <td class="hidden2">15.04.2024</td>
-                                    <td class="dark hidden3">$150.00</td>
-                                    <td class="hidden2">
+                                    <td>Handbag</td>
+                                    <td>15.04.2024</td>
+                                    <td class="dark">$150.00</td>
+                                    <td>
                                         <p class="status restitution">Restitution</p>
                                     </td>
                                     <td>Credit Card</td>
-                                    <td class="hidden1"><i class="fa-regular fa-pen-to-square"></i></td>
+                                    <td><i class="fa-regular fa-pen-to-square"></i></td>
                                 </tr>
                                 <tr>
                                     <td>AKN12512</td>
                                     <td class="dark">Michael Lee</td>
-                                    <td class="hidden2">Jacket</td>
-                                    <td class="hidden2">16.04.2024</td>
-                                    <td class="dark hidden3">$60.00</td>
-                                    <td class="hidden2">
+                                    <td>Jacket</td>
+                                    <td>16.04.2024</td>
+                                    <td class="dark">$60.00</td>
+                                    <td>
                                         <p class="status completed">Completed</p>
                                     </td>
                                     <td>Bank Transfer</td>
-                                    <td class="hidden1"><i class="fa-regular fa-pen-to-square"></i></td>
+                                    <td><i class="fa-regular fa-pen-to-square"></i></td>
                                 </tr>
 
                             </tbody>
@@ -278,10 +266,7 @@
 
                 <!-- Footer Section -->
                 <footer class="footer">
-                    <div>
-
-                        <p>1-11 of 1200 pages </p>
-                    </div>
+                    <p>1-11 of 1200 pages </p>
                     <div class="dropdown">
                         <span>The page you're on</span>
                         <button class="button">1</button>
@@ -290,8 +275,11 @@
                         <span class="aricon"><i class="fa-solid fa-2xs fa-arrow-right-long ar"></i></span>
                     </div>
                 </footer>
-            </div>  
+
+            </div>
         </div>
+
+   
 </body>
 
 </html>
