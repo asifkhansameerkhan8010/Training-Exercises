@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+<body>
+    <!-- Main Container -->
+        <div class="container">
+            <!-- Tooltip Section -->
+            <div class="tooltip">
+                <div class="logo">
+                    <i style="color: rgb(41, 35, 131);" class="fa-solid fa-2x fa-hat-cowboy"></i>
+                </div>
+                <nav class="icons-flex">
+                    <i class="fa-solid fa-chart-pie icon"><span class="popup">Pie</span></i>
+                    <i class="fa-solid fa-chart-simple icon"><span class="popup">Analytics</span></i>
+                    <i class="fa-solid fa-border-all icon"><span class="popup">Dashboards</span></i>
+                    <i class="fa-solid fa-dice-d6 icon"><span class="popup">Orders</span></i>
+                    <i class="fa-solid fa-cube icon"><span class="popup">Cart</span></i>
+                    <i class="fa-solid fa-circle-notch icon"><span class="popup">Theme</span></i>
+                </nav>
+            </div>
+            <button class="ham">☰</button>
+            <div class="ham-menu">
+                <p class="para three">Product Management</p>
+                <p class="para three">Sales Management</p>
+                <p class="para three">Order Management</p>
+                <p class="para">Customer Statics</p>
+                <p class="para">Daily Order</p>
+                <p class="para">Order Details</p>
+                <p class="para">Leaderboards</p>
+                <p class="para">Supplier Management</p>
+                <p class="para">Supplier Details</p>
+                <p class="para">User Analytics</p>
+            </div>
+
+
+
+            <!-- Sidebar Section -->
+            <div class="sidebar">
+                <div class="profile">
+                    <img src="assets/download.png" alt="profile" class="user-image">
+                    <div class="personal-info">
+                        <p style="color:#011d38" class="name dark">Helen Derinlacs<span class="arrow">▼</span></p>
+                        <p class="title">Sales Manager</p>
+                    </div>
+                </div>
+                <div class="dasboard">
+                    <h4 style="color:#011d38" class="heading dark">Dashboard</h4>
+                    <nav class="dash-contents">
+                        <p class="para three">Product Management<span class="arrow">▼</span></p>
+                        <p class="para three">Sales Management<span class="arrow">▼</span></p>
+                        <p class="para three">Order Management<span class="arrow">▼</span></p>
+                        <p class="para">Customer Statics</p>
+                        <p class="para">Daily Order</p>
+                        <p class="para">Order Details</p>
+                        <p class="para">Leaderboards</p>
+                        <p class="para">Supplier Management</p>
+                        <p class="para">Supplier Details</p>
+                        <p class="para">User Analytics</p>
+                    </nav>
+                </div>
+                <div class="rel">
+                    <p class=" paras"><i class="fa-solid fa-circle-question circle-icon"></i>Help Started</p>
+                    <p class=" paras"><i class="fa-solid fa-circle-plus circle-icon"></i>Add New Folder</p>
+                </div>
+            </div>
+
+
+            <div class="cons">
+                <!-- Content Section -->
+                <section class="content-section">
+                    <header class="content-header">
+                        <p style="color:#00274b" class="dark heads">Order Details<i style="color:gainsboro" class="fa-solid fa-circle-question q-icon"></i></p>
+                        <div class="button-section">
+                            <button class="buttons">Open Documentation</button>
+                            <button class="buttons">Setup Details</button>
+                            <button class="buttons more-button">...</button>
+                        </div>
+                    </header>
+                    <section class="contents-in-head">
+                        <p>In the order details section, you can review and manage all orders with their details. You
+                            can view
+                            and edit many information such as IDs of all orders, ordered product, order date, price, and
+                            order
+                            status. Access to this area is limited. Only administrators and team leaders can reach it.
+                            The changes
+                            you make will be approved after they are checked.</p>
+                    </section>
+                </section>
+                
+
+
+                <!-- Navbar Section -->
+                <div class="navbar">
+                    <div class="options">
+                        <ul>
+                            <li><a href="#">All Orders</a></li>
+                            <li><a href="#">Completed</a></li>
+                            <li><a href="#">Continuing</a></li>
+                            <li><a href="#">Restitute</a></li>
+                            <li><a href="#">Cancelled</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Search Container Section -->
+                <div class="search-container">
+                    <div class="button-and-search">
+                        <div class="search">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                            <input type="text" placeholder="Search for order ID, customer, order status or something..."
+                                class="search-bar">
+                        </div>
+                        <div class="btn-container">
+                            <button class="btn-of-sc"><i class="fa-solid fa-filter mag-glass"></i> Filters</button>
+                            <button class="btn-of-sc"><i class="fa-solid fa-paperclip"></i> Attachment</button>
+                            <button class="btn-of-sc export"><i class="fa-solid fa-file-arrow-down"></i> Export
+                                <ul class="dropdowns">
+                                    <li><a href="#">Export as .xlsx</a></li>
+                                    <li><a href="#">Export as .doc</a></li>
+                                </ul>
+                            </button>
+                            <button class="btn-of-sc hiddenbt">Menu</button>
+                        </div>
+                        
+                        <div class="navbar-hidden">
+                            <div class="options-hidden">
+                                <ul>
+                                    <li><a href="#">All Orders</a></li>
+                                    <li><a href="#">Completed</a></li>
+                                    <li><a href="#">Continuing</a></li>
+                                    <li><a href="#">Restitute</a></li>
+                                    <li><a href="#">Cancelled</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Table Section -->
+                <div class="table-section">
+    
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th class="three dark">Order ID</th>
+                                    <th class="three dark">Customer</th>
+                                    <th class="dark hidden2">Order</th>
+                                    <th class="three dark hidden2">Delivery Date</th>
+                                    <th class="three dark hidden3">Delivery Pricing</th>
+                                    <th class="three dark hidden2">Delivery Status</th>
+                                    <th class="three dark">Payment</th>
+                                    <th class="dark hidden1">Edit</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>AKN12508</td>
+                                    <td class="dark"><span>Asifkhan</span></td>
+                                    <td class="hidden2">Tshirt</td>
+                                    <td class="hidden2">12.04.2024</td>
+                                    <td class="dark hidden3">$24.90</td>
+                                    <td class="hidden2">
+                                        <p class="status completed">Completed</p>
+                                    </td>
+                                    <td>Credit Card</td>
+                                    <td class="hidden1"><i class="fa-regular fa-pen-to-square"></i></td>
+                                </tr>
+
+                                <tr>
+                                    <td>AKN12509</td>
+                                    <td class="dark"><span>John Doe</span></td>
+                                    <td class="hidden2">Shoe</td>
+                                    <td class="hidden2">13.04.2024</td>
+                                    <td class="dark hidden3">$75.00</td>
+                                    <td class="hidden2">
+                                        <p class="status cancelled">Cancelled</p>
+                                    </td>
+                                    <td>PayPal</td>
+                                    <td class="hidden1"><i class="fa-regular fa-pen-to-square"></i></td>
+                                </tr>
+                                
+                                <tr>
+                                    <td>AKN12510</td>
+                                    <td class="dark"><span>Jane Smith</span></td>
+                                    <td class="hidden2">Jeans</td>
+                                    <td class="hidden2">14.04.2024</td>
+                                    <td class="dark hidden3">$45.00</td>
+                                    <td class="hidden2">
+                                        <p class="status continue">Continue</p>
+                                    </td>
+                                    <td>Bank Transfer</td>
+                                    <td class="hidden1"><i class="fa-regular fa-pen-to-square"></i></td>
+                                </tr>
+                                <tr>
+                                    <td>AKN12511</td>
+                                    <td class="dark"><span>Emma</span></td>
+                                    <td class="hidden2">Handbag</td>
+                                    <td class="hidden2">15.04.2024</td>
+                                    <td class="dark hidden3">$150.00</td>
+                                    <td class="hidden2">
+                                        <p class="status restitution">Restitution</p>
+                                    </td>
+                                    <td>Credit Card</td>
+                                    <td class="hidden1"><i class="fa-regular fa-pen-to-square"></i></td>
+                                </tr>
+                                <tr>
+                                    <td>AKN12512</td>
+                                    <td class="dark"><span>Michael Lee</span></td>
+                                    <td class="hidden2">Jacket</td>
+                                    <td class="hidden2">16.04.2024</td>
+                                    <td class="dark hidden3">$60.00</td>
+                                    <td class="hidden2">
+                                        <p class="status completed">Completed</p>
+                                    </td>
+                                    <td>Bank Transfer</td>
+                                    <td class="hidden1"><i class="fa-regular fa-pen-to-square"></i></td>
+                                </tr>
+                                <tr>
+                                    <td>AKN12508</td>
+                                    <td class="dark"><span>Asifkhan</span></td>
+                                    <td class="hidden2">Tshirt</td>
+                                    <td class="hidden2">12.04.2024</td>
+                                    <td class="dark hidden3">$24.90</td>
+                                    <td class="hidden2">
+                                        <p class="status completed">Completed</p>
+                                    </td>
+                                    <td>Credit Card</td>
+                                    <td class="hidden1"><i class="fa-regular fa-pen-to-square"></i></td>
+                                </tr>
+
+                                <tr>
+                                    <td>AKN12509</td>
+                                    <td class="dark"><span>John Doe</span></td>
+                                    <td class="hidden2">Shoe</td>
+                                    <td class="hidden2">13.04.2024</td>
+                                    <td class="dark hidden3">$75.00</td>
+                                    <td class="hidden2">
+                                        <p class="status cancelled">Cancelled</p>
+                                    </td>
+                                    <td>PayPal</td>
+                                    <td class="hidden1"><i class="fa-regular fa-pen-to-square"></i></td>
+                                </tr>
+                                <tr>
+                                    <td>AKN12510</td>
+                                    <td class="dark"><span>Jane Smith</span></td>
+                                    <td class="hidden2">Jeans</td>
+                                    <td class="hidden2">14.04.2024</td>
+                                    <td class="dark hidden3">$45.00</td>
+                                    <td class="hidden2">
+                                        <p class="status continue">Continue</p>
+                                    </td>
+                                    <td>Bank Transfer</td>
+                                    <td class="hidden1"><i class="fa-regular fa-pen-to-square"></i></td>
+                                </tr>
+                                <tr>
+                                    <td>AKN12511</td>
+                                    <td class="dark"><span>Emma</span></td>
+                                    <td class="hidden2">Handbag</td>
+                                    <td class="hidden2">15.04.2024</td>
+                                    <td class="dark hidden3">$150.00</td>
+                                    <td class="hidden2">
+                                        <p class="status restitution">Restitution</p>
+                                    </td>
+                                    <td>Credit Card</td>
+                                    <td class="hidden1"><i class="fa-regular fa-pen-to-square"></i></td>
+                                </tr>
+                                <tr>
+                                    <td>AKN12512</td>
+                                    <td class="dark"><span>Michael Lee</span></td>
+                                    <td class="hidden2">Jacket</td>
+                                    <td class="hidden2">16.04.2024</td>
+                                    <td class="dark hidden3">$60.00</td>
+                                    <td class="hidden2">
+                                        <p class="status completed">Completed</p>
+                                    </td>
+                                    <td>Bank Transfer</td>
+                                    <td class="hidden1"><i class="fa-regular fa-pen-to-square"></i></td>
+                                </tr>
+                                <tr>
+                                    <td>AKN12510</td>
+                                    <td class="dark"><span>Jane Smith</span></td>
+                                    <td class="hidden2">Jeans</td>
+                                    <td class="hidden2">14.04.2024</td>
+                                    <td class="dark hidden3">$45.00</td>
+                                    <td class="hidden2">
+                                        <p class="status continue">Continue</p>
+                                    </td>
+                                    <td>Bank Transfer</td>
+                                    <td class="hidden1"><i class="fa-regular fa-pen-to-square"></i></td>
+                                </tr>
+                                <tr>
+                                    <td>AKN12511</td>
+                                    <td class="dark"><span>Emma</span></td>
+                                    <td class="hidden2">Handbag</td>
+                                    <td class="hidden2">15.04.2024</td>
+                                    <td class="dark hidden3">$150.00</td>
+                                    <td class="hidden2">
+                                        <p class="status restitution">Restitution</p>
+                                    </td>
+                                    <td>Credit Card</td>
+                                    <td class="hidden1"><i class="fa-regular fa-pen-to-square"></i></td>
+                                </tr>
+                                <tr>
+                                    <td>AKN12512</td>
+                                    <td class="dark"><span>Michael Lee</span></td>
+                                    <td class="hidden2">Jacket</td>
+                                    <td class="hidden2">16.04.2024</td>
+                                    <td class="dark hidden3">$60.00</td>
+                                    <td class="hidden2">
+                                        <p class="status completed">Completed</p>
+                                    </td>
+                                    <td>Bank Transfer</td>
+                                    <td class="hidden1"><i class="fa-regular fa-pen-to-square"></i></td>
+                                </tr>
+                                <tr>
+                                    <td>AKN12508</td>
+                                    <td class="dark"><span>Asifkhan</span></td>
+                                    <td class="hidden2">Tshirt</td>
+                                    <td class="hidden2">12.04.2024</td>
+                                    <td class="dark hidden3">$24.90</td>
+                                    <td class="hidden2">
+                                        <p class="status completed">Completed</p>
+                                    </td>
+                                    <td>Credit Card</td>
+                                    <td class="hidden1"><i class="fa-regular fa-pen-to-square"></i></td>
+                                </tr>
+
+                                <tr>
+                                    <td>AKN12509</td>
+                                    <td class="dark"><span>John Doe</span></td>
+                                    <td class="hidden2">Shoe</td>
+                                    <td class="hidden2">13.04.2024</td>
+                                    <td class="dark hidden3">$75.00</td>
+                                    <td class="hidden2">
+                                        <p class="status cancelled">Cancelled</p>
+                                    </td>
+                                    <td>PayPal</td>
+                                    <td class="hidden1"><i class="fa-regular fa-pen-to-square"></i></td>
+                                </tr>
+                                <tr>
+                                    <td>AKN12510</td>
+                                    <td class="dark"><span>Jane Smith</span></td>
+                                    <td class="hidden2">Jeans</td>
+                                    <td class="hidden2">14.04.2024</td>
+                                    <td class="dark hidden3">$45.00</td>
+                                    <td class="hidden2">
+                                        <p class="status continue">Continue</p>
+                                    </td>
+                                    <td>Bank Transfer</td>
+                                    <td class="hidden1"><i class="fa-regular fa-pen-to-square"></i></td>
+                                </tr>
+                                <tr>
+                                    <td>AKN12511</td>
+                                    <td class="dark"><span>Emma</span></td>
+                                    <td class="hidden2">Handbag</td>
+                                    <td class="hidden2">15.04.2024</td>
+                                    <td class="dark hidden3">$150.00</td>
+                                    <td class="hidden2">
+                                        <p class="status restitution">Restitution</p>
+                                    </td>
+                                    <td>Credit Card</td>
+                                    <td class="hidden1"><i class="fa-regular fa-pen-to-square"></i></td>
+                                </tr>
+                                <tr>
+                                    <td>AKN12512</td>
+                                    <td class="dark"><span>Michael Lee</span></td>
+                                    <td class="hidden2">Jacket</td>
+                                    <td class="hidden2">16.04.2024</td>
+                                    <td class="dark hidden3">$60.00</td>
+                                    <td class="hidden2">
+                                        <p class="status completed">Completed</p>
+                                    </td>
+                                    <td>Bank Transfer</td>
+                                    <td class="hidden1"><i class="fa-regular fa-pen-to-square"></i></td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                </div>
+
+                <!-- Footer Section -->
+                <footer class="footer">
+                    <div>
+                        <p>1-11 of 1200 pages </p>
+                    </div>
+                    <div class="dropdown">
+                        <span>The page you're on</span>
+                        <button class="button">1</button>
+                        <span style="font-size: larger;">|</span>
+                        <span class="aricon"><i class="fa-solid fa-2xs fa-arrow-left-long ar"></i></span>
+                        <span class="aricon"><i class="fa-solid fa-2xs fa-arrow-right-long ar"></i></span>
+                    </div>
+                </footer>
+            </div>  
+        </div>
+</body>
+<script>
+function toggleNavbar() {
+    const navbarHidden = document.getElementsByClassName("navbar-hidden")[0];
+    if (navbarHidden) {
+        // Toggle the display property based on current state
+        navbarHidden.style.display = navbarHidden.style.display === "block" ? "none" : "block";
+    }
+}
+
+function handleResize() {
+    const navbarHidden = document.getElementsByClassName("navbar-hidden")[0];
+    if (navbarHidden) {
+  
+        if (window.innerWidth > 380) {
+            navbarHidden.style.display = "none"; 
+        }
+    }
+}
+
+document.getElementsByClassName("hiddenbt")[0].addEventListener('click', toggleNavbar);
+
+// Add event listener for screen resize
+window.addEventListener('resize', handleResize);
+// Get the hamburger button and menu elements
+const hamButton = document.querySelector('.ham');
+const hamMenu = document.querySelector('.ham-menu');
+
+// Add click event listener to the hamburger button
+hamButton.addEventListener('click', () => {
+    // Toggle the display property of the menu
+    if (hamMenu.style.display === "none" || hamMenu.style.display === "") {
+        hamMenu.style.display = "block";
+    } else {
+        hamMenu.style.display = "none";
+    }
+    console.log("working")
+});
+
+
+</script>
+</html>
