@@ -1000,11 +1000,7 @@ table td, table th {
           color:#a3a7aa;
       }
     }
-    @media screen and (max-width:1800px) {
-      .cons{
-        flex-grow: 1;
-      }
-    }
+   
     @media (min-width:900px) and  (max-width:976px){
       .sidebar{
         width:max-content;
@@ -1028,6 +1024,22 @@ table td, table th {
     @media screen and (max-width:350px) {
       .content-section{
         margin:10px 0;
+      }
+    }
+    @media screen and (min-width:1800px) {
+      .cons{
+        flex-grow: 1;
+        height: 100vh;
+        
+      }
+      .body{
+        position:relative;
+        font-size: 2vw;
+      }
+      .footer{
+        margin:5px;
+        position: absolute;
+        bottom:0;
       }
     }
  
