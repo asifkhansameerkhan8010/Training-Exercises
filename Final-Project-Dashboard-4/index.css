@@ -1,9 +1,13 @@
+
+
 body {
     padding: 0;
     margin: 0;
     width: 100%;
     box-sizing: border-box;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
   }
+  
   .container {
       min-height: 100vh;
       display: flex;
@@ -23,7 +27,7 @@ body {
     padding: 2vw;
     gap: 4vh;
     height: auto;
-    background: #f5f5f5;
+    background: #fbfbfd;
   }
   
   /* Logo styling */
@@ -44,13 +48,13 @@ body {
   .icon {
     position: relative;
     font-size: 1.3vw;
-    color: rgb(172, 172, 172);
+    color: #a3a7aa;
     cursor: pointer;
   }
   
   /* Popup tooltip styling */
   .popup {
-    color: rgb(41, 35, 131);
+    color:#003171;
     position: absolute;
     border-radius: 2px;
     transform: translateY(-50%);
@@ -76,8 +80,8 @@ body {
   /* Sidebar */
   .sidebar {
     width: 20%;
-    color: #666;
-    border-right: 1px solid gray;
+    color: #a3a7aa;
+    border-right: 1px solid rgb(219, 219, 219);
     font-weight: 400;
     padding: 1vw; /* Adjusted padding to match overall layout */
     display: flex;
@@ -97,8 +101,8 @@ body {
   
   /* User Image */
   .user-image {
-    width: 4vw; /* Adjusted size to make it smaller */
-    height: 4vw; /* Match height to width */
+    width: 20x; /* Adjusted size to make it smaller */
+    height: 20px; /* Match height to width */
     border-radius: 50%;
     margin-right: 1vw; /* Space between image and text */
   }
@@ -112,7 +116,7 @@ body {
   
   /* Name Styling */
   .name {
-    font-size: 0.9rem; /* Adjusted size to match design */
+    font-size: 1rem; /* Adjusted size to match design */
     margin: 0;
     width: 100%; /* Ensure it takes full width */
     font-weight: 600 !important;
@@ -121,7 +125,7 @@ body {
   /* Title Styling */
   .title {
     font-size: 1vw; /* Smaller font size for the title */
-    color: gray;
+    color: #a3a7aa;
     margin: 0;
   }
   
@@ -135,7 +139,7 @@ body {
   
   /* Dashboard Heading */
   .heading {
-    font-size: 1rem; /* Adjusted font size */
+    font-size: 0.8rem; /* Adjusted font size */
     margin-bottom: 1vw; /* Consistent spacing */
     position: relative; /* For the arrow positioning */
     font-weight:bolder !important;
@@ -199,37 +203,15 @@ body {
   }
   
   .dash-contents p:hover {
-    color: rgb(1, 1, 119);
+    color: #003171;
     cursor: pointer;
     font-weight: 600;
+    background-color: #fdfdfd;
+    right:5px;
   }
   
   /* Responsive Adjustments */
-  @media (max-width: 900px) {
-    /* Adjust image size and font sizes for smaller screens */
-    .user-image {
-      width: 4vw;
-      height: 4vw; /* Maintain aspect ratio */
-    }
-  
-    .name {
-      font-size: 2vw;
-    }
-  
-    .title {
-      font-size: 1.5vw;
-    }
-  
-    .heading {
-      font-size: 1.5vw;
-    }
-  
-    .para,
-    .paras {
-      font-size: 1.5vw;
-      padding: 0.8vw 0;
-    }
-  }
+  /*  */
   
   @media (max-width: 600px) {
     /* Further adjustments for smaller screens */
@@ -309,7 +291,7 @@ body {
   
   /* Heading Styles */
   .heads {
-    font-size: 3vh;
+    font-size: 4vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -333,35 +315,47 @@ body {
   .buttons {
     padding: 0.8vh 1.2vh;
     font-size: 0.8rem;
-    background-color: #f0f0f0;
-    border-radius: 2px;
-    color: #333;
+    background-color: #ffffff;
+    border-radius: 4px;
+    color: #c0bfbf;
     border: 1px solid gainsboro;
     cursor: pointer;
     transition: background-color 0.3s ease;
   }
   
   .buttons:hover {
-    color: blue;
-    border: 1px solid blue;
+    color:rgb(41, 35, 131);
+    border: 1px solid rgb(41, 35, 131);
   }
   
   /* Paragraph in Contents */
   .contents-in-head p {
     font-size: 0.9rem;
     line-height: 1.5;
-    color: #666;
+    color:#a3a7aa;
     margin: 0;
     width: 85%;
     height: 90%;
   
   }
   
+
+
+
+
+
+
+
+
+
+
+
+
   .options {
     margin-top: 1rem;
     padding: 0rem;
     position: relative;
-    border-bottom: 1px solid grey;
+    border-bottom:  1px solid rgb(219, 219, 219);
     height: fit;
     padding-bottom: 0.6rem;
   }
@@ -392,13 +386,25 @@ body {
     font-size: 1rem;
     padding-bottom: 0.6rem;
     margin: 0px;
-    color: #666;
+    color:#a7aaaf;
   }
   
+
+
+
+
+
+
+
+
+
+
+
+
   /*search-bar*/
   .search-container {
     margin: 0.7rem 0;
-    background: #d3d0d0;
+    background:#fbfbfd;;
     border-radius: 4px;
     /* width: 100%; */
     padding: 1rem 0.4rem;
@@ -410,7 +416,6 @@ body {
   /* Search Bar */
   .search-bar {
     width: 90%;
-    border: 1px yello solid;
   }
   
   .search-bar:focus {
@@ -423,7 +428,7 @@ body {
   .export-button {
     padding: 0.6rem 1rem;
     background-color: #f0f0f0;
-    border: 1px solid #ddd;
+    border: 1px solid #fffcfc;
     cursor: pointer;
     border-radius: 4px;
     font-size: 0.9rem;
@@ -433,20 +438,43 @@ body {
   /* Icon Inside Search Bar */
   .search i {
     position: absolute;
-    color: #848884;
+    color:#a3a7aa;
     font-size: 0.8rem;
     margin: 0.5rem;
   }
   .navbar-hidden{
-   
-      border: 1px black solid;
-      background-color: white;
+      display: none;
+      border: 1px solid gainsboro;
+      background-color: rgb(224, 224, 224);
       z-index:10;
+      font-size: 1rem;
   }
   .search input {
     padding: 0.3rem 1.7rem;
+    outline: none;
+    border:1px solid gainsboro;
+    border-radius: 5px;
   }
+
+
+
+
+
+
+
+
+
+
   
+  .search input::placeholder
+  {
+    color: #a3a7aa;
+  }
+
+
+
+
+
   /* Button and Search Section */
   .button-and-search {
     display: flex;
@@ -467,15 +495,27 @@ body {
     padding: 2rem;
     padding: 0;
     width: 5rem;
-    color: #666;
-    border: 1px solid #666;
+    background: white;
+    color:#a3a7aa;
+    border: 1px solid #e9e6e6;
   }
   /* Small Button */
   
   .btn-of-sc:hover {
-    color: rgb(2, 2, 121);
-    border: 1px solid rgb(2, 2, 121);
+    color: #5b6880;
+    border: 1px solid #5b6880;
   }
+  .input.search-bar{
+    background-color: white;
+    color:#757373;
+
+  }
+
+
+
+
+
+
   
   /* Dropdown Menu */
   .dropdowns {
@@ -487,7 +527,7 @@ body {
     width: 8vw;
     margin-top: 1.5rem;
     padding: 0;
-    background-color: rgb(238, 235, 235);
+    background-color: rgb(255, 255, 255);
     border-radius: 5px;
     list-style-type: none;
   }
@@ -510,137 +550,223 @@ body {
     visibility: visible;
   }
   
-  .navbar-hidden{
-      display:none;
+  
+
+  .navbar-hidden ul{
+    margin:0;
+    padding: 2px;
   }
   
-  /* Table Section */
-  
-  .table-section {
-      border: 1px black solid;
+
+  .ham-menu{
+    border:2px solid rgb(238, 238, 238);
+    width:max-content;
+    border-radius: 5px;
+    padding:2px;
+    z-index: 1;
+    position: absolute;
+    top:4%;
+    right:0;
+    display: none;
+    background-color: #f7f7f7;
+    
   }
-  
-  .table-section table {
-      width: 100%;
-      border-collapse: collapse;
-      margin: 0 auto;
-      text-align: center;
-      font-size: 0.9rem;
-      height: 100;
-    }
-    
-    .table-section thead {
-      background-color: #f9f9f9;
-      font-weight: bold;
-      position: sticky;
-      top: 0;
-      border-bottom: 1px solid #ddd;
-    }
-    
-    .table-section td,
-    .table-section th {
-      padding: 0.5rem;
-      text-align: center;
-      white-space: nowrap;
-      color: #666;
-    }
-    
-    .table-section tbody tr:hover {
-      background-color: #f2f2f2;
-    }
-    
-    th.dark,
-    td.dark {
-      color: black;
-    }
-    
-    .status {
-      padding: 0rem;
-      margin: 0;
-      border-radius: 5px;
-      width: 5rem;
-      display: inline-block;
-      text-align: center;
-    }
-    
-    .cancelled {
-      color: rgb(233, 76, 76);
-      background-color: rgb(250, 146, 146);
-    }
-    
-    .restitution {
-      color: orange;
-      background-color: rgb(255, 209, 123);
-    }
-    
-    .completed {
-      background-color: #90ee90;
-      color: #42af42;
-    }
-    
-    .continue {
-      color: rgb(55, 0, 255);
-      background-color: #d8e2d8;
-    }
-    
-    .table-section th {
-      position: relative;
-      padding-right: 1rem;
-    }
-    
-    .table-section .three::after {
-      content: "▼";
-      position: absolute;
-      right: 0.5rem;
-      font-size: 0.75rem;
-      color: gray;
-    }
-    
-    .dark {
-      font-weight: 500;
-    }
-    
-    tbody tr:hover > td {
-      font-weight: 600;
-      cursor: pointer;
-      background-color: #d8e2d8;
-      color: rgb(41, 35, 131);
-    }
-    
-    tbody tr:hover .fa-regular {
-      font-size: large;
-      font-weight: bolder;
-      color: black;
-    }
-    
-    table tr {
-      height: 0.2rem;
-      padding: 0;
-    }
-    
-    .table-section th {
-      padding: 0.5rem;
-      text-align: center;
-      white-space: nowrap;
-      border: none;
-    }
-    
-    .table-section tbody tr:hover .status.cancelled {
-      border: 1px solid rgb(233, 76, 76);
-    }
-    
-    .table-section tbody tr:hover .status.restitution {
-      border: 1px solid orange;
-    }
-    
-    .table-section tbody tr:hover .status.completed {
-      border: 1px solid #42af42;
-    }
-    
-    .table-section tbody tr:hover .status.continue {
-      border: 1px solid rgb(55, 0, 255);
-    }
-    
+  .ham-menu p{
+    color: #a3a7aa;
+    font-size: 0.8rem;
+  }
+  .ham{
+    width:fit-content;
+    height:fit-content;
+    position:absolute;
+    right:2%;
+    display: none;
+    border: none;
+    background-color: #fdfdfd;
+  }
+  .ham-menu p:hover{
+    color:rgb(0, 0, 92);
+    cursor: pointer;
+  }
+
+.navbar-hidden .options-hidden a:hover{
+  color:rgb(0, 0, 92);
+  cursor: pointer;
+}
+
+
+
+
+
+
+/* Table Section */
+.table-section {
+  margin-top: 2rem;
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 2rem;
+  table-layout: auto; /* Allows the table to adjust its width based on content */
+}
+
+th, td {
+  padding: 0.8rem;
+  text-align: left;
+  font-size: 0.9rem;
+  color:#acacac;
+  font-weight: 500;
+  /* position: relative; Ensures the arrow icon is positioned relative to the header */
+}
+
+.table th {
+  background-color: #f5f5f5;
+  white-space: wrap; /* Prevents text from wrapping within the table header */
+}
+
+
+td {
+  border: none; /* Remove borders from table data cells */
+}
+
+.arrow {
+  margin-left: 0.5rem;
+  font-size: 0.8rem;
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* Adjusting column width to prevent overlap */
+th.three {
+  width: 15%;
+}
+
+td.three {
+  width: 15%;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 700px) {
+  th.three, td.three {
+    width: auto;
+  }
+  .arrow {
+    position: static;
+    transform: none;
+    margin-left: 0.3rem;
+  }
+}
+
+.table-section tbody tr:hover {
+  background-color: #fbfbfd;
+}
+
+th.dark,
+td.dark {
+  color:#003171;
+}
+
+/* Status styling */
+.status {
+  padding: 0rem;
+  margin: 0;
+  border-radius: 5px;
+  width: 5rem;
+  display: inline-block;
+  text-align: center;
+}
+
+.cancelled {
+  color:#d77f96;
+  background-color: #fdf1f2;
+}
+
+.restitution {
+  color: #eec662;
+  background-color: #fff9e1;
+}
+
+.completed {
+  background-color: #e9f7f3;
+  color: #6aaf98;
+}
+
+.continue {
+  color:#2f4362;
+  background-color:#f3f4f8;
+}
+
+.table-section th {
+  position: relative;
+  padding-right: 1rem;
+   background-color: #fbfbfd;
+}
+
+.table-section .three::after {
+  content: "▼";
+  right: 0.5rem;
+  font-size: 0.75rem;
+  color: gray;
+}
+
+tbody td span:hover{
+  border-bottom: 1px solid blue;
+}
+
+tbody tr:hover > td {
+  cursor: pointer;
+  background-color:#fbfbfd;
+  color: #082c74;
+}
+
+tbody tr:hover > td.dark {
+  color: #1154da;
+}
+
+tbody tr:hover .fa-regular {
+  color: rgb(0, 0, 0);
+}
+
+table tr {
+  height: 1rem;
+  padding: 2rem;
+}
+
+.table-section th {
+  padding: 0.6rem;
+  text-align: left;
+  white-space: wrap;
+  color:#003171;
+  border: none;
+  border-bottom:  1px solid rgb(219, 219, 219); /* Apply only a bottom border for the table header */
+}
+
+.table-section tbody tr:hover .status.cancelled {
+  border: 1px solid #d77f96;
+}
+
+.table-section tbody tr:hover .status.restitution {
+  border: 1px solid  #eec662;
+}
+
+.table-section tbody tr:hover .status.completed {
+  border: 1px solid  #6aaf98;
+}
+
+.table-section tbody tr:hover .status.continue {
+  border: 1px solid #2f4362;
+}
+table td, table th {
+  vertical-align: middle; /* Ensures proper alignment with data */
+}
+.table-section tbody tr:active {
+  background-color: #e6e6e6;
+}
+
     .footer {
       display: flex;
       align-items: center;
@@ -651,19 +777,25 @@ body {
       bottom: 0px;
       align-items: center;
       border-radius: 0.5rem;
-      background-color: #ccc6c6;
+      background-color: #fbfbfd;
       font-size: 0.8rem;
-      color: #666;
+      color: #a3a7aa;
       padding: 0px 5px;
     }
-  
+    .dropdown{
+      display: flex;
+      column-gap:3px ;
+      justify-content: center;
+      align-items: center;
+      color:#a3a7aa;
+    } 
     .footer p{
       margin: 0;
     }
     
     .button {
       background-color: #ffffff;
-      border: 0.1rem solid #ccc;
+      border: 0.1rem solid#a3a7aa;
       padding: 0.4rem;
       cursor: pointer;
       font-size: 0.8rem;
@@ -681,7 +813,7 @@ body {
     }
     
     .aricon {
-      border: 0.1rem solid grey;
+      border: 0.1rem solid #a3a7aa;
       border-radius: 2px;
       display: inline-block;
       box-sizing: border-box;
@@ -699,10 +831,23 @@ body {
       .container {
         flex-direction: column;
       }
-  
-  
+
+      .content-header{
+        width:100%;
+      }
+        .content-header p.dark.heads
+      {
+        width: fit-content;
+        font-size: 1rem;
+      }
+      .content-section p.dark.heads{
+          margin:0;
+      }
       .content-section p{
-          width: 100%;
+        width: 100%;
+      }
+      .buttons{
+        font-size: 0.4rem;
       }
   
       .tooltip {
@@ -736,6 +881,15 @@ body {
       .sidebar {
         display: none;
       }
+      th.three.dark
+      {
+        text-align:start;
+        padding: 5px;
+      }
+      .ham{
+        display: block;
+      }
+   
     }
   
     @media screen and (max-width: 900px) {
@@ -769,6 +923,7 @@ body {
       }
       .btn-container {
           flex-wrap: wrap;
+          display: relative;
       }
       .content-section p{
           width: 100%;
@@ -782,8 +937,15 @@ body {
       .hiddenbt{
           display:block;
       }
-      .hiddenbt:hover .navbar-hidden{
-          display: block;
+
+      .navbar-hidden{
+          position: absolute;
+          top: 57%;
+          right: 20%;
+          outline:none;
+          background: white;
+          border-radius: 10px;
+          border-color: rgb(145, 66, 66) 1px solid;
       }
       .button-and-search{
           display: flex;
@@ -794,11 +956,49 @@ body {
           display: flex;
   
       }
+      .dropdowns{
+        width: fit-content;
+        background-color: #d6d3d3;
+        left:3%;
+        top:2%;
+        padding: 3px;
+      }
       li{
           list-style: none;
       }
       li a{
           text-decoration: none;
-          color:grey
+          color:#a3a7aa;
       }
     }
+    @media screen and (max-width:1800px) {
+      .cons{
+        flex-grow: 1;
+      }
+    }
+    @media (min-width:900px) and  (max-width:976px){
+      .sidebar{
+        width:max-content;
+      }
+      .sidebar .arrow{
+        position: absolute;
+        right:2%
+      }
+      
+    }
+    @media screen and (max-width:450px)
+    {
+      .content-section{
+        margin:10px 0;
+      }
+      .options{
+        font-size: 0.5rem;
+      }
+
+    }
+    @media screen and (max-width:350px) {
+      .content-section{
+        margin:10px 0;
+      }
+    }
+ 
