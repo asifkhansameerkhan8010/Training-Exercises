@@ -740,7 +740,36 @@ table tr {
   padding: 0.6rem;
   text-align: left;
   white-space: wrap;
-  color:#003171;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  color:#002b64;
   border: none;
   border-bottom:  1px solid rgb(219, 219, 219); /* Apply only a bottom border for the table header */
 }
