@@ -32,7 +32,7 @@ body {
   
   /* Logo styling */
   .tooltip .logo {
-    margin-bottom: 6vh; /* Increased margin to create more space between the logo and the icons */
+    margin-bottom: 6vh; 
     font-size: 1.3vw;
   }
   
@@ -83,10 +83,10 @@ body {
     color: #a3a7aa;
     border-right: 1px solid rgb(219, 219, 219);
     font-weight: 400;
-    padding: 1vw; /* Adjusted padding to match overall layout */
+    padding: 1vw; 
     display: flex;
     flex-direction: column;
-    gap: 0.2vw; /* Consistent gap between elements */
+    gap: 0.2vw; 
     /* border: 1px black solid; */
   }
   
@@ -94,37 +94,37 @@ body {
   .profile {
     display: flex;
     padding: 5px 8px;
-    align-items: center; /* Aligns the image and text on the same vertical level */
-    margin-bottom: 0.2vw; /* Adjusted margin for consistency */
-    position: relative; /* Make this relative to position the arrow absolutely */
+    align-items: center; 
+    margin-bottom: 0.2vw;
+    position: relative; 
   }
   
   /* User Image */
   .user-image {
-    width: 20x; /* Adjusted size to make it smaller */
-    height: 20px; /* Match height to width */
+    width: 20x;
+    height: 20px; 
     border-radius: 50%;
-    margin-right: 1vw; /* Space between image and text */
+    margin-right: 1vw;
   }
   
   /* Personal Info - Name and Title */
   .personal-info {
     display: flex;
     flex-direction: column;
-    gap: 0.1vw; /* Smaller gap between name and title */
+    gap: 0.1vw; 
   }
   
   /* Name Styling */
   .name {
-    font-size: 1rem; /* Adjusted size to match design */
+    font-size: 1rem; 
     margin: 0;
-    width: 100%; /* Ensure it takes full width */
+    width: 100%; 
     font-weight: 600 !important;
   }
   
   /* Title Styling */
   .title {
-    font-size: 1vw; /* Smaller font size for the title */
+    font-size: 1vw; 
     color: #a3a7aa;
     margin: 0;
   }
@@ -139,9 +139,9 @@ body {
   
   /* Dashboard Heading */
   .heading {
-    font-size: 0.8rem; /* Adjusted font size */
-    margin-bottom: 1vw; /* Consistent spacing */
-    position: relative; /* For the arrow positioning */
+    font-size: 0.8rem; 
+    margin-bottom: 1vw; 
+    position: relative; 
     font-weight:bolder !important;
   }
   
@@ -160,8 +160,8 @@ body {
   /* Align the arrows for dashboard items */
   .dash-contents .para {
     display: flex;
-    align-items: center; /* Align items vertically */
-    position: relative; /* To position arrow absolutely */
+    align-items: center;
+    position: relative;
   }
   
   /* Individual Items */
@@ -176,14 +176,14 @@ body {
   /* Arrow Styling for Sidebar Items */
   .dash-contents .arrow {
     position: absolute;
-    right: 0; /* Push the arrow to the right end of the container */
+    right: 0; 
     font-size: 0.8em;
     color: gray;
   }
   
   /* Rel Section */
   .rel {
-    margin-top: auto; /* Push this section to the bottom of the sidebar */
+    margin-top: auto; 
   }
   
   /* Paras */
@@ -214,15 +214,15 @@ body {
   /*  */
   
   @media (max-width: 600px) {
-    /* Further adjustments for smaller screens */
+   
     .profile {
-      flex-direction: column; /* Stack image and text vertically */
-      align-items: flex-start; /* Align items to the left */
+      flex-direction: column; 
+      align-items: flex-start;
     }
   
     .user-image {
       margin-right: 0;
-      margin-bottom: 1vw; /* Add margin below the image */
+      margin-bottom: 1vw; 
       width: 6vw;
       height: 6vw;
     }
@@ -284,7 +284,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    flex-wrap: wrap;
     margin-bottom: 0;
     font-size: medium;
   }
@@ -442,13 +442,17 @@ body {
     font-size: 0.8rem;
     margin: 0.5rem;
   }
-  .navbar-hidden{
-      display: none;
-      border: 1px solid gainsboro;
-      background-color: rgb(224, 224, 224);
-      z-index:10;
-      font-size: 1rem;
-  }
+
+
+
+
+
+
+
+
+
+
+
   .search input {
     padding: 0.3rem 1.7rem;
     outline: none;
@@ -552,38 +556,75 @@ body {
   
   
 
-  .navbar-hidden ul{
-    margin:0;
-    padding: 2px;
-  }
-  
 
-  .ham-menu{
-    border:2px solid rgb(238, 238, 238);
-    width:max-content;
-    border-radius: 5px;
-    padding:2px;
-    z-index: 1;
-    position: absolute;
-    top:4%;
-    right:0;
-    display: none;
-    background-color: #f7f7f7;
-    
-  }
-  .ham-menu p{
-    color: #a3a7aa;
-    font-size: 0.8rem;
-  }
-  .ham{
-    width:fit-content;
-    height:fit-content;
-    position:absolute;
-    right:2%;
-    display: none;
-    border: none;
-    background-color: #fdfdfd;
-  }
+/* Hidden Navbar */
+.navbar-hidden {
+  display: block;
+  width:70px;/* Adjust width to fit the container */
+  border: 1px solid gainsboro;
+  background-color: rgb(245, 245, 245);
+  z-index: 10;
+  font-size: 1rem;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Added shadow */
+  padding: 10px;
+  /* Slight rounding for better aesthetics */
+}
+
+.navbar-hidden ul {
+  margin: 0;
+  padding: 2px;
+}
+
+/* Hover effect inside hidden navbar */
+.navbar-hidden .options-hidden a:hover {
+  color: rgb(0, 0, 92);
+  cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+/* Hamburger Menu Styles */
+.ham-menu {
+  border: 2px solid rgb(238, 238, 238);
+  width: 30%;
+ 
+  padding: 5px;
+  z-index: 1;
+  position: absolute;
+  display: none;
+  top: 4%;
+  right: 0;
+  display: none;
+  background-color: #fdfdfd;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Added shadow */
+}
+
+.ham-menu p {
+  color: #a3a7aa;
+  font-size: 0.8rem;
+}
+
+.ham {
+  width: fit-content;
+  height: fit-content;
+  position: absolute;
+  right: 2%;
+  display: none;
+  border: none;
+  background-color: #fdfdfd;
+}
+
+.ham-menu p:hover {
+  color: rgb(0, 0, 92);
+  cursor: pointer;
+}
+
   .ham-menu p:hover{
     color:rgb(0, 0, 92);
     cursor: pointer;
@@ -609,7 +650,7 @@ table {
   width: 100%;
   border-collapse: collapse;
   margin-bottom: 2rem;
-  table-layout: auto; /* Allows the table to adjust its width based on content */
+  table-layout: auto;
 }
 
 th, td {
@@ -618,17 +659,17 @@ th, td {
   font-size: 0.9rem;
   color:#acacac;
   font-weight: 500;
-  /* position: relative; Ensures the arrow icon is positioned relative to the header */
+  
 }
 
 .table th {
   background-color: #f5f5f5;
-  white-space: wrap; /* Prevents text from wrapping within the table header */
+  white-space: wrap;
 }
 
 
 td {
-  border: none; /* Remove borders from table data cells */
+  border: none; 
 }
 
 .arrow {
@@ -740,38 +781,9 @@ table tr {
   padding: 0.6rem;
   text-align: left;
   white-space: wrap;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   color:#002b64;
   border: none;
-  border-bottom:  1px solid rgb(219, 219, 219); /* Apply only a bottom border for the table header */
+  border-bottom:  1px solid rgb(219, 219, 219);
 }
 
 .table-section tbody tr:hover .status.cancelled {
@@ -855,6 +867,12 @@ table td, table th {
       color: blue;
       font-weight: bold;
     }
+    @media (min-width: 801px) {
+      .ham,
+      .ham-menu {
+        display: none!important;
+      }
+    }
     
     @media screen and (max-width: 800px) {
       .container {
@@ -886,6 +904,7 @@ table td, table th {
         border: none;
         gap: 0vh;
         position: relative;
+        right: 3px;
       }
     
       .icons-flex {
@@ -918,6 +937,7 @@ table td, table th {
       .ham{
         display: block;
       }
+      
    
     }
   
@@ -966,10 +986,12 @@ table td, table th {
       .hiddenbt{
           display:block;
       }
-
+      .search-container{
+        position: relative;
+      }
       .navbar-hidden{
           position: absolute;
-          top: 57%;
+          top: 80%;
           right: 20%;
           outline:none;
           background: white;
@@ -983,7 +1005,10 @@ table td, table th {
   
       .options-hidden{
           display: flex;
-  
+          font-size:0.8rem;
+      }
+      .options-hidden .li{
+        padding:2px;
       }
       .dropdowns{
         width: fit-content;
@@ -1026,20 +1051,113 @@ table td, table th {
         margin:10px 0;
       }
     }
-    @media screen and (min-width:1800px) {
-      .cons{
-        flex-grow: 1;
-        height: 100vh;
-        
+  
+    @media screen and (min-width: 1700px) {
+      body {
+        font-size: 1.2rem; /* Increase base font size */
       }
-      .body{
+    
+      .tooltip .logo {
+        font-size: 1vw; /* Scale up the logo text */
+      }
+      .profile p.name.dark{
+        font-size: 2rem;
+      }
+    
+      .icon {
+        font-size: 1.2vw; /* Scale up icons */
+      }
+    
+      .popup {
+        font-size: 1.2rem; /* Scale up the tooltip text */
+      }
+    
+      .sidebar {
+        font-size: 1.2rem; /* Increase sidebar font size */
+      }
+    
+    
+      .profile .title {
+        font-size: 1.5rem; /* Adjust title size */
+      }
+    
+      .heading {
+        font-size: 1.4rem; /* Scale up heading */
+      }
+    
+      .para {
+        font-size: 1.5rem; /* Adjust paragraph text */
+      }
+    
+      .paras {
+        font-size: 1.2rem; /* Adjust sidebar section text */
+      }
+    
+      .dash-contents .para {
+        font-size: 1.5rem; /* Adjust dashboard item text */
+      }
+    
+      .content-header .heads {
+        font-size: 3.5vh; /* Adjust content header size */
+      }
+    
+      .button-section .buttons {
+        font-size: 1.2rem; /* Adjust button text */
+      }
+    
+      .contents-in-head p {
+        font-size: 1.5rem; /* Adjust paragraph text */
+      }
+    
+      .options a {
+        font-size: 1.2rem; /* Adjust navigation links */
+      }
+      .btn-container{
+        width: 30%;
+        height: auto;
+        display: flex;
+        column-gap: 30px;
+        height: 3rem;
+      }
+      .btn-of-sc{
+        width: 25rem !important;
+      }
+      .button-and-search{
+        height:5rem;
+      }
+
+      .search-bar{
+        height: 3rem;
+      }
+    
+      .search-container input,
+      .search-container button {
+        font-size: 1.5rem; /* Adjust search bar input and button size */
+      }
+      .search{
         position:relative;
-        font-size: 2vw;
       }
-      .footer{
-        margin:5px;
-        position: absolute;
-        bottom:0;
+      .search.fa-magnifying-glass{
+        font-size: 3rem;
+        display: absolute;
+      }
+      .status{
+        width:8rem;
+      }
+      .options ul li a {
+        font-size: 1.8rem;
+      }
+      .table-section th,
+      .table-section td {
+        font-size: 1.5rem; /* Adjust table text size */
+      }
+    
+      .footer {
+        font-size: 1.4rem; /* Adjust footer text */
+      }
+      .footer span.aricon{
+        font-size: 1.5rem; /* Adjust footer text */
       }
     }
+    
  

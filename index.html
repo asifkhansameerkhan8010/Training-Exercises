@@ -331,15 +331,13 @@ function handleResize() {
 
 document.getElementsByClassName("hiddenbt")[0].addEventListener('click', toggleNavbar);
 
-// Add event listener for screen resize
 window.addEventListener('resize', handleResize);
-// Get the hamburger button and menu elements
+
 const hamButton = document.querySelector('.ham');
 const hamMenu = document.querySelector('.ham-menu');
 
-// Add click event listener to the hamburger button
 hamButton.addEventListener('click', () => {
-    // Toggle the display property of the menu
+
     if (hamMenu.style.display === "none" || hamMenu.style.display === "") {
         hamMenu.style.display = "block";
     } else {
@@ -347,6 +345,8 @@ hamButton.addEventListener('click', () => {
     }
     console.log("working")
 });
+
+
 
 
 </script>
