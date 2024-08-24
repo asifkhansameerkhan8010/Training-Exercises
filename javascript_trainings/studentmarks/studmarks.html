@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Grades Manager</title>
+    <link rel="stylesheet" href="studmarks.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Student Grades Manager</h1>
+        <div class="input-group">
+            <label for="studentName">Student Name:</label>
+            <input type="text" id="studentName" placeholder="Enter student name">
+        </div>
+        <div class="input-group">
+            <label for="grade">Grade:</label>
+            <input type="text" id="grade" placeholder="Enter grade">
+        </div>
+        <button id="addStudent">Add Student</button>
+        <button id="displayGrades">Display Grades</button>
+
+        <div id="gradesList" class="grades-list">
+            <h3>Grades List:</h3>
+            <ol id="gradesOutput">
+            </ol>
+        </div>
+
+        <button id="calculateAverage">Calculate Average Grade</button>
+
+        <div id="averageGrade" class="average-grade">
+            <h3>Average Grade:</h3>
+            <p id="averageOutput">0</p>
+        </div>
+    </div>
+</body>
+<script src="studmarks.js"></script>
+</html>

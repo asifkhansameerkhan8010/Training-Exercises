@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced calculator</title>
+    <link rel="stylesheet" href="calc.css">
+</head>
+<body>
+    <div class="outer-div">
+        
+        <div class="outer-border">
+            
+            <div class="inner-border">
+                   <h2>Advanced Simple Interest</h2>
+                    <h2>Calculator</h2>
+                        <label for="Principal Amount">Principal Amount:</label>
+                        <input type="text" placeholder="Enter principal amount" id="p-amount">
+                        <p class="err-msg">Enter amount  $500 and no more than
+                            $10,000. </p>
+                        <p class="num-err" id="err1">Enter a number!</p>
+                        <label for="ROI">Rate of Interest(%):</label>
+                        <input type="text" placeholder="Enter interest rate" id="interest">
+                        <p class="num-err" id="err2">Enter a number!</p>
+                        <label for="Time">Time(Years):</label>
+                        <input type="text" placeholder="Enter time in years" id="years">
+                        <p class="num-err" id="err3">Enter a number!</p>
+                   
+                    <button>Calculate Interest</button>
+                    <div class="display">
+                        <h4>Interest:</h4>
+                        <p id="int"></p>
+                    </div>
+                    <div class="display">
+                        <h4>Total Amount:</h4>
+                        <p id="ta"></p>
+                    </div>
+                    <div class="display">
+                        <h4>Additional Information:</h4>
+                        <p id="ainfo"></p>
+                    </div> 
+            </div>
+        </div>
+    </div>
+    
+</body>
+<script src="calc.js"></script>
+</html>
