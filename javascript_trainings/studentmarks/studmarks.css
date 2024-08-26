@@ -77,3 +77,7 @@ button:hover {
     font-size: 16px;
     color: #007bff;
 }
+.errmsg{
+    color: red;
+    display: none;
+}
