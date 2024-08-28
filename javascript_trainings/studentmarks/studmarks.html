@@ -17,9 +17,10 @@
             <label for="grade">Grade:</label>
             <input type="text" id="grade" placeholder="Enter grade">
         </div>
-        <p class="errmsg">Grade Should between 1-100!</p>
-        <button id="addStudent">Add Student</button>
-        <button id="displayGrades">Display Grades</button>
+        <p class="errmsg" id="grademsg">Grade Should between 1-100!</p>
+        <p class="errmsg" id="nullval">Fill The Fields Completely</p>
+        <button id="addStudent" onclick="addstuds(event)">Add Student</button>
+        <button id="displayGrades" onclick="displaystuds(event)">Display Grades</button>
 
         <div id="gradesList" class="grades-list">
             <h3>Grades List:</h3>
@@ -27,7 +28,7 @@
             </ol>
         </div>
 
-        <button id="calculateAverage">Calculate Average Grade</button>
+        <button id="calculateAverage" onclick="calculate(event)">Calculate Average Grade</button>
 
         <div id="averageGrade" class="average-grade">
             <h3>Average Grade:</h3>

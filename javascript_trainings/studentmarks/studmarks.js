@@ -1,45 +1,81 @@
-let studarray = [];
-const studentname = document.getElementById("studentName");
-const grade = document.getElementById("grade");
-let outputgrade = document.getElementById("gradesOutput");
-let btnstud = document.getElementById("addStudent");
-let btndisplay = document.getElementById("displayGrades");
-let btnavggrade = document.getElementById("calculateAverage");
-let error = document.getElementsByClassName("errmsg")[0];
-let avgop = document.getElementById("averageOutput");
-
-btnstud.addEventListener("click", () => {
-    if (parseInt(grade.value) >= 1 && parseInt(grade.value) <= 100) {
-        studarray.push({
-            studentname: studentname.value,
-            grade: parseInt(grade.value) 
-        });
-        console.log(studentname.value, grade.value, studarray);
-        error.style.display = "none";
-    } else {
-        error.style.display = "block";
+class Student {
+    constructor(name, grade) {
+        this.name = name;
+        this.grade = grade;
     }
-});
+}
 
-btndisplay.addEventListener("click", () => {
-    outputgrade.innerHTML = ""; 
-    studarray.forEach(students => {
-        let list = document.createElement("li");
-        list.textContent = `${students.studentname} - ${students.grade}`;
-        outputgrade.appendChild(list);
-    });
-});
-
-btnavggrade.addEventListener("click", () => {
-    if (studarray.length > 0) {
-        let sum = 0; 
-        studarray.forEach(marks => {
-            sum += marks.grade;
-        });
-        let avg = sum / studarray.length;
-        console.log(avg); 
-        avgop.textContent = `Average Grade: ${avg.toFixed(2)}`; 
-    } else {
-        avgop.textContent = "No students to calculate the average.";
+class GradeManager {
+    constructor() {
+        this.students = [];
+        this.error = document.getElementsByClassName("errmsg")[0];
+        this.outputgrade = document.getElementById("gradesOutput");
+        this.avgop = document.getElementById("averageOutput");
     }
-});
+
+    addStudent(name, grade) {
+        if (this.isValidGrade(grade)) {
+            const student = new Student(name, parseInt(grade));
+            this.students.push(student);
+            this.error.style.display = "none";
+            console.log(name, grade, this.students);
+        } else {
+            this.error.style.display = "block";
+        }
+    }
+
+    isValidGrade(grade) {
+        return parseInt(grade) >= 1 && parseInt(grade) <= 100;
+    }
+
+    displayGrades() {
+        this.outputgrade.innerHTML = "";
+        this.students.forEach((student) => {
+            const listItem = document.createElement("li");
+            listItem.textContent = `${student.name} - ${student.grade}`;
+            this.outputgrade.appendChild(listItem);
+        });
+    }
+
+    calculateAverage() {
+        if (this.students.length > 0) {
+            const sum = this.students.reduce((total, student) => total + student.grade, 0);
+            const avg = sum / this.students.length;
+            this.avgop.textContent = `Average Grade: ${avg.toFixed(2)}`;
+        } else {
+            this.avgop.textContent = "No students to calculate the average.";
+        }
+    }
+}
+
+const studentNameInput = document.getElementById("studentName");
+const gradeInput = document.getElementById("grade");
+const btnAddStudent = document.getElementById("addStudent");
+const btnDisplayGrades = document.getElementById("displayGrades");
+const btnCalculateAverage = document.getElementById("calculateAverage");
+
+const gradeManager = new GradeManager();
+
+function addstuds(event){
+    if(studentNameInput.value=="" && gradeInput.value=="" )
+    {
+        document.getElementById("nullval").style.display="block";
+    }
+    else{
+        document.getElementById("nullval").style.display="none";
+        gradeManager.addStudent(studentNameInput.value, gradeInput.value);
+    }
+    
+
+}
+
+function displaystuds(event){
+    gradeManager.displayGrades();
+}
+
+
+
+function calculate(event){
+    gradeManager.calculateAverage();
+}
+

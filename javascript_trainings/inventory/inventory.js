@@ -4,47 +4,71 @@ class Product {
         this.price = price;
         this.quantity = quantity;
     }
-    displayDetails() {
-        return `${this.name} - Price: $${this.price}, Quantity: ${this.quantity}`;
-    }
 }
+
 let inventory = [];
-document.getElementById("inventory-form").addEventListener("submit", function (e) {
+function start(e) {
     e.preventDefault();
     let name = document.getElementById("name").value;
     let price = parseFloat(document.getElementById("price").value);
     let quantity = parseInt(document.getElementById("quantity").value);
+
     let product = new Product(name, price, quantity);
     inventory.push(product);
+
     displayInventory();
     document.getElementById("inventory-form").reset();
-});
+}
 
 function displayInventory() {
     let tableBody = document.getElementById("tablebody");
-    tableBody.innerHTML = "";
+    tableBody.innerHTML = ""; 
+
     inventory.forEach((product, index) => {
-        let tr = document.createElement("tr");
-        let tdName = document.createElement("td");
-        tdName.textContent = product.name;
-        tr.appendChild(tdName);
-        let tdPrice = document.createElement("td");
-        tdPrice.textContent = `$${product.price}`;
-        tr.appendChild(tdPrice);
-        let tdQuantity = document.createElement("td");
-        tdQuantity.textContent = product.quantity;
-        tr.appendChild(tdQuantity);
-        let deleteBtn = document.createElement("button");
-        deleteBtn.textContent = "Remove";
-        deleteBtn.classList.add("action-btn");
-        deleteBtn.addEventListener("click", () => {
-            inventory.splice(index, 1);
-            displayInventory();
-        });
-        let actionsTd = document.createElement("td");
-        actionsTd.appendChild(deleteBtn);
-        tr.appendChild(actionsTd);
-        tableBody.appendChild(tr);
+        tableBody.innerHTML += `
+            <tr>
+                <td>${product.name}</td>
+                <td>$${product.price}</td>
+                <td><input type="number" value="${product.quantity}" style="width: 60px; border: none;" disabled></td>
+                <td class="actionsTd">
+                    <button class="action-btn edit-btn" onclick="editProduct(${index})">Edit</button>
+                    <button class="action-btn save-btn" onclick="saveProduct(${index})" style="display: none;">Save</button>
+                    <button class="action-btn" onclick="removeProduct(${index})">Remove</button>
+                </td>
+            </tr>
+        `;
     });
+    console.log(inventory);
 }
+
+function editProduct(index) {
+    let editBtn = document.getElementsByClassName("edit-btn")[index];
+    let saveBtn = document.getElementsByClassName("save-btn")[index];
+    let quantityInput = document.querySelectorAll("#tablebody input[type='number']")[index];
+
+    editBtn.style.display = "none";
+    saveBtn.style.display = "inline";
+    quantityInput.disabled = false;
+    console.log(inventory);
+}
+
+function saveProduct(index) {
+    let saveBtn = document.getElementsByClassName("save-btn")[index];
+    let editBtn = document.getElementsByClassName("edit-btn")[index];
+    let quantityInput = document.querySelectorAll("#tablebody input[type='number']")[index];
+
+    inventory[index].quantity = parseInt(quantityInput.value);
+
+    saveBtn.style.display = "none";
+    editBtn.style.display = "inline";
+    quantityInput.disabled = true;
+
+    displayInventory();
+}
+
+function removeProduct(index) {
+    inventory.splice(index, 1);
+    displayInventory();
+}
+
 displayInventory();

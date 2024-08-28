@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Home</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="calculator.css" />
+  </head>
+  <body>
+  <div class="container">
+	<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Home</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="calculator.css" />
+</head>
+<body>
+<div class="container">
+    <div id="container">
+        <div class="calculator">
+            <input id="display" type="text" name="display" readonly>
+			<p id="errmsg">Please Enter Input Fields!</p>
+            <div class="button-div">
+				<div>
+					<button class="button digits" onclick="displayvalue(7)">7</button>
+					<button class="button digits" onclick="displayvalue(8)">8</button>
+					<button class="button digits" onclick="displayvalue(9)">9</button>
+					<button class="button mathButtons" onclick="displayvalue('/')">/</button>
+				</div>
+				<div>
+					<button class="button digits" onclick="displayvalue(4)">4</button>
+					<button class="button digits" onclick="displayvalue(5)">5</button>
+					<button class="button digits" onclick="displayvalue(6)">6</button>
+					<button class="button mathButtons" onclick="displayvalue('*')">*</button>
+				</div>
+				<div>
+					<button class="button digits" onclick="displayvalue(1)">1</button>
+					<button class="button digits" onclick="displayvalue(2)">2</button>
+					<button class="button digits" onclick="displayvalue(3)">3</button>
+					<button class="button mathButtons" onclick="displayvalue('-')">-</button>
+				</div>
+				<div>
+					<button id="clearButton" class="button" onclick="clearscreen()">C</button>
+					<button class="button digits" onclick="displayvalue(0)">0</button>
+					<button class="button mathButtons" onclick="calculate('=')">=</button>
+					<button class="button mathButtons" onclick="displayvalue('+')">+</button>
+				</div>
+		    </div>
+        </div>
+    </div>
+</div>
+</body>
+<script src="index.js"></script>
+</html>
+
+	

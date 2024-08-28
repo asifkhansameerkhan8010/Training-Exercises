@@ -25,7 +25,6 @@ searchbtn.addEventListener("click",async event=>{
         displayError();
     }
 })
-
 async function getWeatherdata(city)
 {
     const apiUrl=`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apikey}`;
@@ -33,13 +32,11 @@ async function getWeatherdata(city)
     
     if(!response.ok)
     {
-        throw new Error("Could not fetch");
+        console.log("Could not fetch");
     }
 
     return await response.json();
 }
-
-
 function displayweather(data){
     const {name:city,
         main:{temp,humidity},
@@ -68,11 +65,10 @@ function getweathericon(id){
         case(id>800 && id<810):
            return "☁";
         default:
-            return "❓";
+            return "❌";
     }
 }
 
 function displayError(message){
     errmsg.style.display="block";
-    console.log("Please Enter a City!");
 }

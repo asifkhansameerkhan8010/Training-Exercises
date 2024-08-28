@@ -11,8 +11,9 @@
         <h2>To-Do List</h2>
         <div class="input-group">
             <input type="text" id="taskInput" placeholder="Enter new task">
-            <button id="addTaskBtn">Add Task</button>
+            <button id="addTaskBtn" onclick="addingTask(event)">Add Task</button>
         </div>
+        <p id="error">Enter the Task !!</p>
         <div id="taskList"></div>
     </div>
 
