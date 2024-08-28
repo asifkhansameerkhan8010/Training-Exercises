@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Management</title>
+    <link rel="stylesheet" href="type_safe.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Add User</h2>
+        <div class="add-user-form">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email">
+            <label for="role">Role:</label>
+            <select id="role" name="role">
+                <option value="admin">Admin</option>
+                <option value="user">User</option>
+            </select>
+            <button class="add-user-button">Add User</button>
+        </div>
+        <h2>User List</h2>
+        <table class="user-list">
+            <tr>
+                <td>1. User Name</td>
+                <td>Email</td>
+                <td>Role</td>
+                <td><button class="edit-button">Edit</button><button class="delete-button">Delete</button></td>
+            </tr>
+            <tr>
+                <td>2. User Name</td>
+                <td>Email</td>
+                <td>Role</td>
+                <td><button class="edit-button">Edit</button><button class="delete-button">Delete</button></td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>
