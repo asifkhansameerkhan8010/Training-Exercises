@@ -14,7 +14,12 @@ function calculate() {
     else {
         error.style.display = "none";
         try {
-            displayField.value = eval(displayField.value).toFixed(5);
+            if (eval(displayField.value) == "Infinity") {
+                displayField.value = "We cannot divide zero";
+            }
+            else {
+                displayField.value = eval(displayField.value).toFixed(5);
+            }
         }
         catch (error) {
             displayField.value = "Error";

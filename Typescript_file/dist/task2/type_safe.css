@@ -94,8 +94,20 @@ th,td{
     background-color: #0056b3;
 }
 
+.errmsg{
+    color: red;
+    text-align: center;
+}
+#emailerr,#fillerr,#roleerr{
+    display: none;
+}
+.roles{
 
-
+    width: 80%;
+    text-align: left;
+    height: 80%;
+    border: none;
+}
 button{
     margin: 2px;
     height: 35px;
