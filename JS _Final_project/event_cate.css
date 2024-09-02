@@ -1,0 +1,202 @@
+/* General Styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* Header */
+.header {
+    background-color: #4c93af; /* Match the header background color */
+    padding: 10px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.header-container {
+    max-width: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 0 15px;
+    box-sizing: border-box;
+}
+
+h1 {
+    margin: 0;
+}
+
+/* Navigation */
+.nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    box-sizing: border-box;
+}
+
+.nav a {
+    color: white;
+    text-decoration: none;
+    margin: 5px;
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+.nav a:hover {
+    font-weight: 800;
+}
+
+/* Main Container */
+.main-container {
+    flex-grow: 1;
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+/* Form Container */
+.category-form-container {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.category-form-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    font-weight: 500;
+    color: #555;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group select {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    width: 100%;
+}
+
+.save-button, .edit-button, .delete-button {
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: #4c93af;
+    color: white;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.save-button:hover, .edit-button:hover, .delete-button:hover {
+    background-color: #3e7d91;
+}
+
+/* Category List Table */
+.category-list-section {
+    margin-top: 20px;
+}
+
+.category-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.category-table th, .category-table td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.category-table th {
+    background-color: #f2f2f2;
+}
+
+/* Footer */
+.footer {
+    background-color: #4c93af; /* Match the footer background color */
+    color: white;
+    text-align: center;
+    padding: 10px;
+    margin-top: auto;
+}
+
+.footer p {
+    margin: 0;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 0 10px;
+    }
+
+    .nav {
+        margin-top: 10px;
+        justify-content: flex-start;
+    }
+
+    .nav a {
+        font-size: 0.85rem;
+    }
+
+    .main-container {
+        width: 90%;
+    }
+}
+
+@media (max-width: 480px) {
+    .header-container {
+        padding: 0 5px;
+    }
+
+    .nav {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+    }
+
+    .nav a {
+        font-size: 0.8rem;
+        margin: 2px 0;
+    }
+
+    .category-form-container {
+        padding: 15px;
+        width: 95%;
+    }
+
+    .save-button, .edit-button, .delete-button {
+        font-size: 0.8rem;
+    }
+}

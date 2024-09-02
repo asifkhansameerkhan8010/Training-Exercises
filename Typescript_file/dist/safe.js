@@ -46,6 +46,8 @@ var emailInput = document.getElementById('email');
 var roleSelect = document.getElementById('role');
 var addUserButton = document.querySelector('.add-user-button');
 var userListTable = document.querySelector('.user-list tbody');
+var isEditing = false;
+var editingUserId = null;
 addUserButton.addEventListener('click', function () {
     var name = nameInput.value.trim();
     var email = emailInput.value.trim();
@@ -54,15 +56,31 @@ addUserButton.addEventListener('click', function () {
     var emailerr = document.getElementById("emailerr");
     if (name && email) {
         fillerr.style.display = "none";
-        if (userManager.isEmailDuplicate(email)) {
-            emailerr.style.display = "block";
-            return;
+        if (isEditing) {
+            if (editingUserId !== null) {
+                var currentUser = userManager.findUserBy('id', editingUserId);
+                if (currentUser && currentUser.email !== email && userManager.isEmailDuplicate(email)) {
+                    emailerr.style.display = "block";
+                    return;
+                }
+                userManager.updateUser(editingUserId, 'name', name);
+                userManager.updateUser(editingUserId, 'email', email);
+                userManager.updateUser(editingUserId, 'role', role);
+                isEditing = false;
+                editingUserId = null;
+                addUserButton.textContent = 'Add User';
+            }
         }
-        emailerr.style.display = "none";
-        userManager.addUser(name, email, role);
+        else {
+            if (userManager.isEmailDuplicate(email)) {
+                emailerr.style.display = "block";
+                return;
+            }
+            emailerr.style.display = "none";
+            userManager.addUser(name, email, role);
+        }
         renderUserList();
-        nameInput.value = '';
-        emailInput.value = '';
+        clearInputFields();
     }
     else {
         fillerr.style.display = "block";
@@ -73,7 +91,7 @@ function renderUserList() {
     userManager.getUsers().forEach(function (user, index) {
         var rowNumber = index + 1;
         var row = document.createElement('tr');
-        row.innerHTML = "\n            <td>".concat(rowNumber, ". ").concat(user.name, "</td>\n            <td>").concat(user.email, "</td>\n            <td>\n                <input type=\"text\" value=\"").concat(user.role, "\" class=\"role-input\" data-user-id=\"").concat(user.id, "\" style=\"display: none;\" />\n                <span class=\"role-span\">").concat(user.role, "</span>\n            </td>\n            <td>\n                <button class=\"edit-button\" data-user-id=\"").concat(user.id, "\">Edit</button>\n                <button class=\"save-button\" data-user-id=\"").concat(user.id, "\" style=\"display: none;\">Save</button>\n                <button class=\"delete-button\" data-user-id=\"").concat(user.id, "\">Delete</button>\n            </td>\n        ");
+        row.innerHTML = "\n            <td>".concat(rowNumber, ". ").concat(user.name, "</td>\n            <td>").concat(user.email, "</td>\n            <td>").concat(user.role, "</td>\n            <td>\n                <button class=\"edit-button\" data-user-id=\"").concat(user.id, "\">Edit</button>\n                <button class=\"delete-button\" data-user-id=\"").concat(user.id, "\">Delete</button>\n            </td>\n        ");
         userListTable.appendChild(row);
     });
     addEventListeners();
@@ -83,31 +101,14 @@ function addEventListeners() {
         button.addEventListener('click', function () {
             var buttonElement = button;
             var userId = parseInt(buttonElement.dataset.userId);
-            var row = buttonElement.closest('tr');
-            var roleInput = row.querySelector('.role-input');
-            var roleSpan = row.querySelector('.role-span');
-            var saveButton = row.querySelector('.save-button');
-            roleSpan.style.display = 'none';
-            roleInput.style.display = 'inline';
-            saveButton.style.display = 'inline';
-            buttonElement.style.display = 'none';
-        });
-    });
-    userListTable.querySelectorAll('.save-button').forEach(function (button) {
-        button.addEventListener('click', function () {
-            var buttonElement = button;
-            var userId = parseInt(buttonElement.dataset.userId);
-            var row = buttonElement.closest('tr');
-            var roleInput = row.querySelector('.role-input');
-            var roleerr = document.getElementById("roleerr");
-            var newRole = roleInput.value.trim();
-            if (newRole === 'admin' || newRole === 'user') {
-                userManager.updateUser(userId, 'role', newRole);
-                roleerr.style.display = "none";
-                renderUserList();
-            }
-            else {
-                roleerr.style.display = "block";
+            var user = userManager.findUserBy('id', userId);
+            if (user) {
+                nameInput.value = user.name;
+                emailInput.value = user.email;
+                roleSelect.value = user.role;
+                isEditing = true;
+                editingUserId = userId;
+                addUserButton.textContent = 'Save Changes';
             }
         });
     });
@@ -119,5 +120,10 @@ function addEventListeners() {
             renderUserList();
         });
     });
+}
+function clearInputFields() {
+    nameInput.value = '';
+    emailInput.value = '';
+    roleSelect.value = 'user';
 }
 renderUserList();

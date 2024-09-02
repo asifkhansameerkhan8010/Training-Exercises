@@ -1,0 +1,342 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+.header {
+    background-color: #4c93af;
+    padding: 10px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    box-sizing: border-box;
+    z-index: 1000; 
+}
+
+h1 {
+    margin: 0;
+}
+
+.header-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 0 15px; 
+    box-sizing: border-box;
+}
+
+.nav {
+    display: flex;
+    gap: 15px;
+}
+
+.nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+.main-container {
+    flex-grow: 1;
+    padding: 20px;
+    box-sizing: border-box;
+    width: 100%;
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 80px; 
+}
+
+.search-filter-bar {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.search-bar, .filter-date, .filter-category, .filter-status {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    width: 200px;
+    font-size: 0.9rem;
+}
+
+.events-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.events-list.single-card {
+    grid-template-columns: 1fr;
+}
+
+.event-card {
+    background-color: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+.event-card:hover {
+    transform: scale(1.03);
+}
+
+.event-status {
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    margin-top: 10px;
+}
+
+.event-status.planning {
+    background-color: yellow;
+    color: #333;
+}
+
+.event-status.finalized {
+    background-color: green;
+    color: white;
+}
+
+.event-status.canceled {
+    background-color: red;
+    color: white;
+}
+
+.action-button {
+    background-color: #4c93af;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    margin: 5px 0;
+    cursor: pointer;
+}
+
+.delete-button {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.delete-button:hover {
+    background-color: darkred;
+}
+
+.add-event-button {
+    display: block;
+    position: fixed;
+    top: 75px;
+    right: 10px;
+    z-index: 10;
+    background-color: rgb(41, 211, 7);
+    color: white;
+    border: none;
+    padding: 10px;
+    font-weight: 800;
+    border-radius: 5px;
+}
+
+.add-event-fab {
+    display: none;
+    position: fixed;
+    bottom: 75px;
+    font-size: xx-large;
+    background-color: rgb(41, 211, 7);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    z-index: 10;
+    left: 10px;
+}
+
+.footer {
+    background-color: #4c93af;
+    box-sizing: border-box;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    margin-top: auto;
+    width: 100%;
+    font-size: 0.9rem;
+}
+
+/* Agenda Section Styles */
+#event-agenda-modal {
+    display: none; /* Hide the modal by default */
+    position: fixed; 
+    z-index: 1000; 
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; 
+    background-color: rgba(0, 0, 0, 0.5); /* Slightly darker overlay */
+}
+
+#event-agenda-modal .modal-content {
+    background-color: #fefefe;
+    margin: 5% auto; /* Center the modal */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 90%; /* Slightly reduced width for better responsiveness */
+    max-width: 600px; /* Set a maximum width */
+    border-radius: 8px; /* Add rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add subtle shadow */
+}
+
+#event-agenda-modal .modal-content h2 {
+    margin-top: 0;
+}
+
+#event-agenda-modal .modal-content form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Spacing between form elements */
+}
+
+#event-agenda-modal .modal-content label {
+    margin-bottom: 5px;
+    
+    font-weight: bold;
+}
+
+#agenda-form{
+    box-sizing: border-box;
+}
+
+#event-agenda-modal .modal-content input,
+#event-agenda-modal .modal-content textarea {
+    width: 95%; /* Full width input and textarea */
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+#event-agenda-modal .modal-content button {
+    background-color: #4c93af;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+#event-agenda-modal .modal-content button:hover {
+    background-color: #357aab;
+}
+
+#agenda-items-container {
+    margin-top: 20px;
+}
+
+.agenda-item {
+    background-color: #f9f9f9;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.agenda-item p {
+    margin: 0;
+}
+
+.agenda-item button {
+    background-color: #4c93af;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.8rem;
+    margin-left: 5px;
+}
+
+.agenda-item button:hover {
+    background-color: #357aab;
+}
+
+.agenda-item .delete-button {
+    background-color: red;
+}
+
+.agenda-item .delete-button:hover {
+    background-color: darkred;
+}
+
+/* Responsive Styles for Agenda Form */
+@media (max-width: 600px) {
+    #event-agenda-modal .modal-content {
+        width: 95%; /* Full width on small screens */
+    }
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+@media (max-width: 1200px) {
+    .events-list {
+        grid-template-columns: repeat(3, 1fr); /* 3 columns for medium screens */
+    }
+}
+
+@media (max-width: 900px) {
+    .events-list {
+        grid-template-columns: repeat(2, 1fr); 
+    }
+}
+
+@media (max-width: 600px) {
+    .events-list {
+        grid-template-columns: 1fr;
+    }
+    .add-event-button {
+        display: none;
+    }
+    .add-event-fab {
+        display: block;
+    }
+}

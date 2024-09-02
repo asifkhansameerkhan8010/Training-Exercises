@@ -49,35 +49,54 @@ class UserManager {
         return this.users;
     }
 }
-
-
-
 const userManager = new UserManager();
+
 const nameInput = document.getElementById('name') as HTMLInputElement;
 const emailInput = document.getElementById('email') as HTMLInputElement;
 const roleSelect = document.getElementById('role') as HTMLSelectElement;
 const addUserButton = document.querySelector('.add-user-button') as HTMLButtonElement;
 const userListTable = document.querySelector('.user-list tbody') as HTMLTableSectionElement;
 
+let isEditing = false;
+let editingUserId: number | null = null;
+
 addUserButton.addEventListener('click', () => {
     const name = nameInput.value.trim();
     const email = emailInput.value.trim();
     const role = roleSelect.value as 'admin' | 'user';
-    let fillerr=document.getElementById("fillerr") as HTMLParagraphElement;
-    let emailerr=document.getElementById("emailerr") as HTMLParagraphElement;
+    let fillerr = document.getElementById("fillerr") as HTMLParagraphElement;
+    let emailerr = document.getElementById("emailerr") as HTMLParagraphElement;
+
     if (name && email) {
-        fillerr.style.display="none";
-        if (userManager.isEmailDuplicate(email)) {
-            emailerr.style.display="block";
-            return; 
+        fillerr.style.display = "none";
+
+        if (isEditing) {
+            if (editingUserId !== null) {
+                const currentUser = userManager.findUserBy('id', editingUserId);
+                if (currentUser && currentUser.email !== email && userManager.isEmailDuplicate(email)) {
+                    emailerr.style.display = "block";
+                    return;
+                }
+                userManager.updateUser(editingUserId, 'name', name);
+                userManager.updateUser(editingUserId, 'email', email);
+                userManager.updateUser(editingUserId, 'role', role);
+                isEditing = false;
+                editingUserId = null;
+                addUserButton.textContent = 'Add User';
+            }
+        } else {
+            if (userManager.isEmailDuplicate(email)) {
+                emailerr.style.display = "block";
+                return; 
+            }
+            emailerr.style.display = "none";
+            userManager.addUser(name, email, role);
         }
-        emailerr.style.display="none";
-        userManager.addUser(name, email, role);
+
         renderUserList();
-        nameInput.value = '';
-        emailInput.value = '';
+        clearInputFields(); 
     } else {
-        fillerr.style.display="block";
+        fillerr.style.display = "block";
     }
 });
 
@@ -90,13 +109,9 @@ function renderUserList() {
         row.innerHTML = `
             <td>${rowNumber}. ${user.name}</td>
             <td>${user.email}</td>
-            <td>
-                <input type="text" value="${user.role}" class="role-input" data-user-id="${user.id}" style="display: none;" />
-                <span class="role-span">${user.role}</span>
-            </td>
+            <td>${user.role}</td>
             <td>
                 <button class="edit-button" data-user-id="${user.id}">Edit</button>
-                <button class="save-button" data-user-id="${user.id}" style="display: none;">Save</button>
                 <button class="delete-button" data-user-id="${user.id}">Delete</button>
             </td>
         `;
@@ -111,32 +126,15 @@ function addEventListeners() {
         button.addEventListener('click', () => {
             const buttonElement = button as HTMLButtonElement;
             const userId = parseInt(buttonElement.dataset.userId!);
-            const row = buttonElement.closest('tr') as HTMLTableRowElement;
-            const roleInput = row.querySelector('.role-input') as HTMLInputElement;
-            const roleSpan = row.querySelector('.role-span') as HTMLSpanElement;
-            const saveButton = row.querySelector('.save-button') as HTMLButtonElement;
+            const user = userManager.findUserBy('id', userId);
 
-            roleSpan.style.display = 'none';
-            roleInput.style.display = 'inline';
-            saveButton.style.display = 'inline';
-            buttonElement.style.display = 'none';
-        });
-    });
-
-    userListTable.querySelectorAll('.save-button').forEach(button => {
-        button.addEventListener('click', () => {
-            const buttonElement = button as HTMLButtonElement;
-            const userId = parseInt(buttonElement.dataset.userId!);
-            const row = buttonElement.closest('tr') as HTMLTableRowElement;
-            const roleInput = row.querySelector('.role-input') as HTMLInputElement;
-            const roleerr=document.getElementById("roleerr") as HTMLParagraphElement;
-            const newRole = roleInput.value.trim();
-            if (newRole === 'admin' || newRole === 'user') {
-                userManager.updateUser(userId, 'role', newRole);
-                roleerr.style.display="none";
-                renderUserList();
-            } else {
-                roleerr.style.display="block";
+            if (user) {
+                nameInput.value = user.name;
+                emailInput.value = user.email;
+                roleSelect.value = user.role;
+                isEditing = true;
+                editingUserId = userId;
+                addUserButton.textContent = 'Save Changes';
             }
         });
     });
@@ -149,6 +147,12 @@ function addEventListeners() {
             renderUserList();
         });
     });
+}
+
+function clearInputFields() {
+    nameInput.value = '';
+    emailInput.value = '';
+    roleSelect.value = 'user'; 
 }
 
 renderUserList();

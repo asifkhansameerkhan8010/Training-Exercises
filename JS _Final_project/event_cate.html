@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Event Categories</title>
+    <link rel="stylesheet" href="event_cate.css"> <!-- Link to the CSS file -->
+</head>
+<body>
+    <header class="header">
+        <div class="header-container">
+            <h1>Manage Event Categories</h1>
+            <nav class="nav">
+                <a href="#">Dashboard</a>
+                <a href="#">Events</a>
+                <a href="#">Settings</a>
+            </nav>
+        </div>
+    </header>
+    
+    <main class="main-container">
+        <!-- Add New Category Form -->
+        <div class="category-form-container">
+            <h2>Add New Category</h2>
+            <form id="addCategoryForm">
+                <div class="form-group">
+                    <label for="categoryName">Category Name</label>
+                    <input type="text" id="categoryName" name="categoryName" required>
+                </div>
+                <button type="submit" class="save-button">Add Category</button>
+            </form>
+        </div>
+
+        <!-- Category List -->
+        <section class="category-list-section">
+            <h2>Event Categories</h2>
+            <table class="category-table">
+                <thead>
+                    <tr>
+                        <th>Category Name</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Example Category Row -->
+                    <tr>
+                        <td>Conference</td>
+                        <td>
+                            <button class="edit-button">Edit</button>
+                            <button class="delete-button">Delete</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2024 Company Name. All rights reserved.</p>
+    </footer>
+    
+    <script src="event_cate.js"></script> <!-- Link to the JavaScript file -->
+</body>
+</html>
