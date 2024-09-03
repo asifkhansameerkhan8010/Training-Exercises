@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Management</title>
+    <link rel="stylesheet" href="admin-dashboard.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header-container">
+            <h1>Admin Dashboard</h1>
+            <nav class="nav">
+                <a href="dashboard.html">User Dashboard</a>
+                <a href="logout.html">Logout</a>
+            </nav>
+        </div>
+    </header>
+    <main class="main-container">
+        <h2>User Management</h2>
+        
+        <div class="add-user">
+            <h3>Add New User</h3>
+            <form id="add-user-form">
+                <input type="text" id="username" placeholder="Enter username" required>
+                <input type="email" id="email" placeholder="Enter email" required>
+                <input type="password" id="password" placeholder="Enter password" required>
+                <select id="role" required>
+                    <option value="user">User</option>
+                    <option value="admin">Admin</option>
+                </select>
+                <button type="submit" class="add-button">Add User</button>
+            </form>
+        </div>
+
+        <div class="user-list">
+            <h3>Registered Users</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Username</th>
+                        <th>Email</th>
+                        <th>Role</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="user-list-body">
+                </tbody>
+            </table>
+        </div>
+    </main>
+    <footer class="footer">
+        <p>&copy; 2024 Event Management App. All rights reserved.</p>
+    </footer>
+
+    <script src="admin-dashboard.js"></script>
+</body>
+</html>

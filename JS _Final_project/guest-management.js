@@ -18,7 +18,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 <td>${guest.email}</td>
                 <td id="guest-${guest.id}">${guest.rsvp}</td>
                 <td>
-                    <button class="edit-btn" data-id="${guest.id}">Edit</button>
+                    <butto class="edit-btn" data-id="${guest.id}">Edit</butto
+                    
+                    n>
                     <button class="delete-btn" data-id="${guest.id}">Delete</button>
                 </td>
             `;
