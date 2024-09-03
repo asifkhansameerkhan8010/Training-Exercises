@@ -1,26 +1,28 @@
 // Retrieve the logged-in user and event ID from local storage or URL parameters
 const loggedInUser = localStorage.getItem('loggedInUser');
 const urlParams = new URLSearchParams(window.location.search);
+console.log(urlParams);
 const eventId = urlParams.get('eventId');
+console.log(eventId);
 
 if (!loggedInUser || !eventId) {
     alert('Invalid access. Please log in and select an event.');
-    window.location.href = 'login.html'; // Redirect if no user or event ID
+    window.location.href = 'login.html'; 
 }
 
-// Key to store guests for the specific event
+
 const eventGuestsKey = `guests_${loggedInUser}_${eventId}`;
 
-// Load existing guests for the event or initialize an empty array
+
 let eventGuests = JSON.parse(localStorage.getItem(eventGuestsKey)) || [];
 
-// Variables to handle editing state
+
 let editingIndex = -1;
 
-// Function to render the guest list
+
 function renderGuests() {
     const guestListBody = document.getElementById('guest-list-body');
-    guestListBody.innerHTML = ''; // Clear existing list
+    guestListBody.innerHTML = ''; 
 
     eventGuests.forEach((guest, index) => {
         const row = document.createElement('tr');
@@ -37,11 +39,10 @@ function renderGuests() {
     });
 }
 
-// Event listener for the add/update guest form submission
-document.getElementById('add-guest-form').addEventListener('submit', function (event) {
-    event.preventDefault(); // Prevent default form submission
 
-    // Collect guest details from the form
+document.getElementById('add-guest-form').addEventListener('submit', function (event) {
+    event.preventDefault(); 
+
     const guestName = document.getElementById('guest-name').value;
     const guestEmail = document.getElementById('guest-email').value;
     const guestRSVP = document.getElementById('guest-rsvp').value;
@@ -60,22 +61,16 @@ document.getElementById('add-guest-form').addEventListener('submit', function (e
     };
 
     if (editingIndex > -1) {
-        // Update existing guest
         eventGuests[editingIndex] = guestDetails;
-        editingIndex = -1; // Reset editing index
+        editingIndex = -1; 
     } else {
-        // Add new guest
         eventGuests.push(guestDetails);
     }
 
     // Save the updated guest list back to local storage
     localStorage.setItem(eventGuestsKey, JSON.stringify(eventGuests));
-
-    // Clear the form
     this.reset();
-    document.querySelector('.add-button').textContent = 'Add Guest'; // Reset button text
-
-    // Re-render the guest list
+    document.querySelector('.add-button').textContent = 'Add Guest'; 
     renderGuests();
 
     alert('Guest saved successfully!');
@@ -84,9 +79,9 @@ document.getElementById('add-guest-form').addEventListener('submit', function (e
 // Function to remove a guest from the list
 function removeGuest(index) {
     if (confirm('Are you sure you want to remove this guest?')) {
-        eventGuests.splice(index, 1); // Remove the guest
-        localStorage.setItem(eventGuestsKey, JSON.stringify(eventGuests)); // Update local storage
-        renderGuests(); // Re-render the guest list
+        eventGuests.splice(index, 1);
+        localStorage.setItem(eventGuestsKey, JSON.stringify(eventGuests)); 
+        renderGuests(); 
     }
 }
 
@@ -96,9 +91,7 @@ function editGuest(index) {
     document.getElementById('guest-name').value = guest.name;
     document.getElementById('guest-email').value = guest.email;
     document.getElementById('guest-rsvp').value = guest.rsvp;
-    editingIndex = index; // Set editing index
-
-    // Change the button text to "Update Guest"
+    editingIndex = index; 
     document.querySelector('.add-button').textContent = 'Update Guest';
 }
 
@@ -129,6 +122,4 @@ document.querySelector('.send-invites-button').addEventListener('click', functio
     alert('Invitations sent successfully!');
 });
 
-
-// Initial rendering of guests
 renderGuests();

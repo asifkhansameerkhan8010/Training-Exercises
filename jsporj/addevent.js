@@ -2,14 +2,14 @@
 const loggedInUser = localStorage.getItem('loggedInUser');
 if (!loggedInUser) {
     alert('You must be logged in to add or edit events.');
-    window.location.href = 'login.html'; // Redirect to login page if no user is logged in
+    window.location.href = 'login.html'; 
 }
 
 // Load existing events for the logged-in user or initialize an empty array
 const userEventsKey = `events_${loggedInUser}`;
 let userEvents = JSON.parse(localStorage.getItem(userEventsKey)) || [];
 
-// Function to populate the form for editing
+
 function populateForm(eventId) {
     const event = userEvents.find(event => event.id === eventId);
     if (event) {
@@ -43,9 +43,7 @@ if (eventId) {
 
 // Event listener for the event form submission
 document.querySelector('form').addEventListener('submit', function (event) {
-    event.preventDefault(); // Prevent default form submission
-
-    // Collect event details from the form
+    event.preventDefault(); 
     const eventName = document.getElementById('event-name').value;
     const eventDate = document.getElementById('event-date').value;
     const location = document.getElementById('location').value;

@@ -8,11 +8,11 @@ const adminCredentials = {
 if (!localStorage.getItem('admin@example.com')) {
     localStorage.setItem(adminCredentials.email, JSON.stringify(adminCredentials));
 }
-// Login form submission event handler
-document.getElementById('login-form').addEventListener('submit', function (event) {
-    event.preventDefault(); // Prevent default form submission
 
-    // Get user input values
+document.getElementById('login-form').addEventListener('submit', function (event) {
+    event.preventDefault(); 
+
+    
     const email = document.getElementById('email').value;
     const password = document.getElementById('password').value;
 
@@ -34,19 +34,17 @@ document.getElementById('login-form').addEventListener('submit', function (event
         return;
     }
 
-    // Store logged-in user data in local storage
+    
     localStorage.setItem('loggedInUser', email); // Save the logged-in user's email to identify the current session
 
-    // Clear the error message and form fields
+    
     document.getElementById('login-error').textContent = '';
     document.getElementById('login-form').reset();
 
-    // Check if the user is an admin
+   
     if (email === adminCredentials.email) {
-        // Redirect to admin dashboard
         window.location.href = 'admin-dashboard.html';
     } else {
-        // Redirect to user dashboard
         window.location.href = 'dashboard.html';
     }
 });

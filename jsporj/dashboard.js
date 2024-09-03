@@ -2,10 +2,9 @@
 const loggedInUser = localStorage.getItem('loggedInUser');
 if (!loggedInUser) {
     alert('Please log in first.');
-    window.location.href = 'login.html'; // Redirect to login page if no user is logged in
+    window.location.href = 'login.html'; 
 }
 
-// Display the logged-in user's name
 document.getElementById('username-display').innerText = `${loggedInUser}`;
 
 // Load the events for the logged-in user
@@ -15,8 +14,7 @@ let userEvents = JSON.parse(localStorage.getItem(userEventsKey)) || [];
 // Function to render events as cards on the dashboard
 function renderEvents(events) {
     const eventsList = document.getElementById('events-list');
-    eventsList.innerHTML = ''; // Clear previous events
-
+    eventsList.innerHTML = ''; 
     events.forEach(event => {
         const eventCard = document.createElement('div');
         eventCard.className = 'event-card';
@@ -49,25 +47,20 @@ function deleteEvent(eventId) {
             return;
         }
         
-        // Remove event from local storage
         const eventKey = `events_${loggedInUser}`;
         let userEvents = JSON.parse(localStorage.getItem(eventKey)) || [];
         userEvents = userEvents.filter(event => event.id !== eventId);
         localStorage.setItem(eventKey, JSON.stringify(userEvents));
 
-        // Remove the specific event data from local storage
         const specificEventKey = `event_${eventId}`;
         localStorage.removeItem(specificEventKey);
 
-        // Remove associated agenda data
         const agendaKey = `agenda_${loggedInUser}_${eventId}`;
         localStorage.removeItem(agendaKey);
 
-        // Remove associated guest list data
         const guestListKey = `guests_${loggedInUser}_${eventId}`;
         localStorage.removeItem(guestListKey);
 
-        // Re-render the events
         renderEvents(userEvents);
     }
 }
@@ -123,24 +116,24 @@ function filterEvents() {
 // Initial rendering of events
 renderEvents(userEvents);
 
-// Event listener for search bar input
+
 document.getElementById('search-bar').addEventListener('input', filterEvents);
 
-// Event listeners for filter dropdowns
+
 document.getElementById('filter-date').addEventListener('change', filterEvents);
 document.getElementById('filter-category').addEventListener('change', filterEvents);
 document.getElementById('filter-status').addEventListener('change', filterEvents);
 
 // Logout functionality
 document.getElementById('logout-button').addEventListener('click', function () {
-    localStorage.removeItem('loggedInUser'); // Clear the logged-in user
+    localStorage.removeItem('loggedInUser');
     alert('You have been logged out.');
-    window.location.href = 'login.html'; // Redirect to login page
+    window.location.href = 'login.html'; 
 });
 
 // Function placeholders for event actions
 function viewEventDetails(eventId) {
-    showAgendaModal(eventId); // Call the function to show the agenda modal
+    showAgendaModal(eventId); 
 }
 
 function manageGuests(eventId) {
@@ -157,7 +150,7 @@ function showAgendaModal(eventId) {
     const closeBtn = modal.querySelector('.close');
     const agendaItemsContainer = document.getElementById('agenda-items-container');
     
-    // Clear previous agenda items
+    
     agendaItemsContainer.innerHTML = '';
 
     // Fetch agenda data for the selected event
@@ -176,21 +169,21 @@ function showAgendaModal(eventId) {
             agendaItemsContainer.appendChild(agendaItemDiv);
         });
     } else {
-        // Prompt to add new agenda
+        
         const noAgendaMessage = document.createElement('p');
         noAgendaMessage.textContent = 'No agenda items found. Please add a new agenda.';
         agendaItemsContainer.appendChild(noAgendaMessage);
     }
 
-    // Show the modal
+    
     modal.style.display = 'block';
 
-    // Close modal event listener
+    
     closeBtn.addEventListener('click', function() {
         modal.style.display = 'none';
     });
 
-    // Click outside modal to close
+    
     window.addEventListener('click', function(event) {
         if (event.target === modal) {
             modal.style.display = 'none';

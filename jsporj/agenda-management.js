@@ -6,7 +6,7 @@ function showAgendaModal(eventId) {
     const agendaForm = document.getElementById('agenda-form');
     const addAgendaButton = document.getElementById('add-agenda-item');
 
-    // Show modal
+    
     modal.style.display = 'block';
 
     // Load existing agenda items
