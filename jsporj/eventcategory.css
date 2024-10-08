@@ -1,0 +1,162 @@
+/* event-category-management.css */
+
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #EDF4F2; /* White-like background */
+}
+
+.header {
+    background-color: #31473A; /* Dark green */
+    color: #EDF4F2; /* Light green */
+    padding: 15px 0;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.header h1 {
+    margin: 0;
+}
+
+.nav a {
+    color: #EDF4F2; /* Light green */
+    text-decoration: none;
+    margin: 0 15px;
+}
+
+.nav a:hover {
+    text-decoration: underline;
+}
+
+.main-container {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.form-container, .category-list-container {
+    margin-bottom: 40px;
+}
+
+.form-container h2, .category-list-container h2 {
+    margin-bottom: 15px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #31473A; /* Dark green */
+}
+
+.form-group input, .form-group select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; /* Added for better box sizing */
+}
+
+.submit-button {
+    background-color: #007bff; /* Blue */
+    color: #fff; /* White */
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.submit-button:hover {
+    background-color: #0056b3; /* Darker blue */
+}
+
+.error-message {
+    color: red;
+    margin-top: 10px;
+}
+
+.category-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.category-table th, .category-table td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: left;
+}
+
+.category-table th {
+    background-color: #31473A; /* Dark green */
+    color: #EDF4F2; /* Light green */
+}
+
+.category-table td {
+    background-color: #fff; /* White */
+}
+
+.category-table td button {
+    background: none;
+    border: none;
+    color: #007bff; /* Blue */
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.category-table td button:hover {
+    text-decoration: underline;
+    color: #0056b3; /* Darker blue */
+}
+
+.footer {
+    background-color: #31473A; /* Dark green */
+    color: #EDF4F2; /* Light green */
+    text-align: center;
+    padding: 15px 0;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav a {
+        margin: 5px 0;
+        display: block;
+    }
+
+    .main-container {
+        padding: 10px;
+    }
+
+    .category-table td button {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .form-group input, .form-group select {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    .submit-button {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+}

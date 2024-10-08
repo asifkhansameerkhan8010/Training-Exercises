@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "@fortawesome/angular-fontawesome": "^0.15.0",
+    "@fortawesome/free-solid-svg-icons": "^6.6.0",
+    "bootstrap": "^5.3.3",
+    "localstorage-polyfill": "^1.0.1",
+    "ngx-bootstrap": "^18.0.2"
+  }
+}

@@ -213,7 +213,8 @@ body {
   /* Responsive Adjustments */
   /*  */
   
-  @media (max-width: 600px) {
+  @media (max-width: 600px) 
+  {
     /* Further adjustments for smaller screens */
     .profile {
       flex-direction: column; /* Stack image and text vertically */

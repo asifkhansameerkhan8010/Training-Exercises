@@ -1,4 +1,4 @@
-//  (only set it once for my reference)
+// Define the admin credentials in local storage (only set it once)
 const adminCredentials = {
     email: 'admin@example.com',
     password: 'admin123',

@@ -7,34 +7,11 @@ if (!loggedInUser) {
 
 document.getElementById('username-display').innerText = `${loggedInUser}`;
 
-// Load user events from local storage
+// Load the events for the logged-in user
 const userEventsKey = `events_${loggedInUser}`;
 let userEvents = JSON.parse(localStorage.getItem(userEventsKey)) || [];
 
-// Function to populate the category filter dropdown
-function populateCategoryFilter() {
-    const categoryFilter = document.getElementById('filter-category');
-    categoryFilter.innerHTML = '';5
-    const categories = JSON.parse(localStorage.getItem('categories_list')) || [];
-    
-    // Add default option
-    const defaultOption = document.createElement('option');
-    defaultOption.value = '';
-    defaultOption.textContent = 'Filter by Category';
-    categoryFilter.appendChild(defaultOption);
-    
-    // Add categories from local storage
-    categories.forEach(category => {
-        const option = document.createElement('option');
-        option.value = category.name.toLowerCase();
-        option.textContent = category.name;
-        categoryFilter.appendChild(option);
-    });
-}
-
-// Call the function to populate the category filter
-populateCategoryFilter();
-
+// Function to render events as cards on the dashboard
 function renderEvents(events) {
     const eventsList = document.getElementById('events-list');
     eventsList.innerHTML = ''; 
@@ -88,6 +65,7 @@ function deleteEvent(eventId) {
     }
 }
 
+
 // Function to filter events
 function filterEvents() {
     const searchText = document.getElementById('search-bar').value.toLowerCase();
@@ -102,6 +80,7 @@ function filterEvents() {
         filteredEvents = filteredEvents.filter(event => event.name.toLowerCase().includes(searchText));
     }
 
+    // Apply date filter
     if (selectedDateFilter) {
         const today = new Date();
         filteredEvents = filteredEvents.filter(event => {
@@ -121,10 +100,12 @@ function filterEvents() {
         });
     }
 
+    // Apply category filter
     if (selectedCategoryFilter) {
         filteredEvents = filteredEvents.filter(event => event.category === selectedCategoryFilter);
     }
 
+    // Apply status filter
     if (selectedStatusFilter) {
         filteredEvents = filteredEvents.filter(event => event.status === selectedStatusFilter);
     }
@@ -132,9 +113,13 @@ function filterEvents() {
     renderEvents(filteredEvents);
 }
 
-// Initialize the filter functionality
+// Initial rendering of events
 renderEvents(userEvents);
+
+
 document.getElementById('search-bar').addEventListener('input', filterEvents);
+
+
 document.getElementById('filter-date').addEventListener('change', filterEvents);
 document.getElementById('filter-category').addEventListener('change', filterEvents);
 document.getElementById('filter-status').addEventListener('change', filterEvents);
@@ -146,6 +131,7 @@ document.getElementById('logout-button').addEventListener('click', function () {
     window.location.href = 'login.html'; 
 });
 
+// Function placeholders for event actions
 function viewEventDetails(eventId) {
     showAgendaModal(eventId); 
 }
@@ -163,6 +149,7 @@ function showAgendaModal(eventId) {
     const modal = document.getElementById('event-agenda-modal');
     const closeBtn = modal.querySelector('.close');
     const agendaItemsContainer = document.getElementById('agenda-items-container');
+    
     
     agendaItemsContainer.innerHTML = '';
 
@@ -182,20 +169,26 @@ function showAgendaModal(eventId) {
             agendaItemsContainer.appendChild(agendaItemDiv);
         });
     } else {
+        
         const noAgendaMessage = document.createElement('p');
         noAgendaMessage.textContent = 'No agenda items found. Please add a new agenda.';
         agendaItemsContainer.appendChild(noAgendaMessage);
     }
 
+    
     modal.style.display = 'block';
 
+    
     closeBtn.addEventListener('click', function() {
         modal.style.display = 'none';
     });
 
+    
     window.addEventListener('click', function(event) {
         if (event.target === modal) {
             modal.style.display = 'none';
         }
     });
 }
+
+

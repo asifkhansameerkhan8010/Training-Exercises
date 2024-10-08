@@ -9,25 +9,6 @@ if (!loggedInUser) {
 const userEventsKey = `events_${loggedInUser}`;
 let userEvents = JSON.parse(localStorage.getItem(userEventsKey)) || [];
 
-// Define function to populate event categories from local storage
-function populateEventCategories() {
-    const categorySelect = document.getElementById('event-category');
-    categorySelect.innerHTML = ''; // Clear any existing options
-
-    // Retrieve categories from local storage
-    const categories = JSON.parse(localStorage.getItem('categories_list')) || [];
-    
-    // Populate the category select element
-    categories.forEach(categoryObj => {
-        const option = document.createElement('option');
-        option.value = categoryObj.name.toLowerCase(); // Use category name in lowercase as value
-        option.textContent = categoryObj.name; // Display the full category name
-        categorySelect.appendChild(option);
-    });
-}
-
-// Call the function to populate categories
-populateEventCategories();
 
 function populateForm(eventId) {
     const event = userEvents.find(event => event.id === eventId);
@@ -38,7 +19,7 @@ function populateForm(eventId) {
         const descriptionInput = document.getElementById('event-description');
         const statusInput = document.getElementById('event-status');
         const categoryInput = document.getElementById('event-category');
-        const submitButton = document.querySelector('button[type="submit"]');
+        const submitButton = document.getElementById('submit-button');
 
         if (nameInput) nameInput.value = event.name || '';
         if (dateInput) dateInput.value = event.date || '';

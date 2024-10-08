@@ -3,12 +3,12 @@ body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #EDF4F2; 
-    color: #31473A; 
+    background-color: #EDF4F2; /* Background color from old CSS */
+    color: #31473A; /* Text color from old CSS */
 }
 
 .header {
-    background-color: #4c93af;
+    background-color: #4c93af; /* Header background color from old CSS */
     color: white;
     padding: 10px;
     display: flex;
@@ -32,11 +32,11 @@ body {
 
 .nav {
     display: flex;
-    gap: 1rem;
+    gap: 1rem; /* Adjusted to match new layout */
 }
 
 .nav a, #logout-button {
-    color: white; 
+    color: white; /* Updated color to match the old CSS */
     text-decoration: none;
     font-weight: 500;
     background: none;
@@ -62,7 +62,7 @@ body {
 
 /* Footer */
 .footer {
-    background-color: #4c93af;
+    background-color: #4c93af; /* Footer background color from old CSS */
     color: white;
     text-align: center;
     padding: 10px;
@@ -92,7 +92,7 @@ body {
 
 .add-event-fab {
     display: none; 
-    background-color: rgb(41, 211, 7); 
+    background-color: rgb(41, 211, 7); /* FAB button color from old CSS */
     color: white;
     border: none;
     width: 40px;
@@ -118,7 +118,7 @@ body {
 
 .search-bar, .filter-date, .filter-category, .filter-status {
     padding: 0.5rem;
-    border: 1px solid #31473A; 
+    border: 1px solid #31473A; /* Border color from old CSS */
     border-radius: 5px;
     font-size: 1rem;
 }
@@ -126,14 +126,14 @@ body {
 /* Event Card Styles */
 .events-list {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Adjusted for consistency */
     gap: 1rem;
     width: 100%;
 }
 
 .event-card {
-    background-color: white; 
-    border: 1px solid #31473A;
+    background-color: white; /* Background color from old CSS */
+    border: 1px solid #31473A; /* Border color from old CSS */
     border-radius: 5px;
     padding: 1rem;
     position: relative;
