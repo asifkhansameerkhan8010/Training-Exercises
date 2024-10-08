@@ -1,0 +1,17 @@
+
+    <div class="container">
+        <h1>Login</h1>
+        <form id="login-form" #Loginform="ngForm" (submit)="Handlelogin(Loginform)">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="Email" required ngModel>
+            
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" placeholder="Password" required ngModel>
+            
+            <button type="submit">Login</button>
+            <div *ngIf="Loginerror" id="login-error" style="color: red;">{{Loginerror}}</div>
+        </form>
+        <p>Don't have an account? <a routerLink="/signup" routerLinkActive="active">Sign Up</a></p>
+    </div>
+
+

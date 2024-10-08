@@ -1,0 +1,25 @@
+<header class="header" *ngIf="role == 'admin'">
+    <div class="header-container">
+        <h1>Admin</h1>
+        <nav class="nav">
+            <a routerLink="/category">Category</a>
+            <button id="logout-button" (click)="this.authservice.logout()">Logout</button>
+            <button id="backup-button" (click)="backupservice.backupDataToLocalStorage()">Backup</button>
+
+            <!-- File input for restoring backup data -->
+            <input type="file"  accept=".json" style="display: none;" #fileInput>
+            <button (click)="fileInput.click()">Restore</button>
+        </nav>
+    </div>
+</header>
+
+<header class="header" *ngIf="role == 'user'">
+    <div class="header-container">
+        <h1 class="logo">EM</h1>
+        <nav class="nav">
+            <a routerLink="/userdashboard" routerLinkActive="active">Dashboard</a>
+            <button id="logout-button" (click)="this.authservice.logout()">Logout</button>
+            <div id="username-display">{{ username }}</div> 
+        </nav>
+    </div>
+</header>

@@ -1,0 +1,74 @@
+.list {
+    border-collapse: collapse;
+    width: 100%;
+    overflow-x: auto;
+    margin-top: 40px;
+  }
+  
+  .list th, .list td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: left;
+    white-space: nowrap; 
+  }
+  
+  .list th {
+    position: sticky; 
+    top: 0;
+    background-color: #f0f0f0; 
+  }
+  
+  .list tr:nth-child(even) {
+    background-color: #f9f9f9; 
+  }
+  
+  .item-name, .item-task, .item-quantity {
+    font-weight: bold;
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+  }
+  
+  .btn-edit, .btn-delete {
+    margin-left: 10px;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    font-family: Arial, sans-serif;
+  }
+  
+  .btn-edit:hover, .btn-delete:hover {
+    background-color: #ccc;
+    transition: background-color 0.2s ease-in-out;
+  }
+  .btn-edit{
+    background-color: rgb(27, 177, 247);
+  }
+  .btn-delete{
+    background-color: red;
+  }
+  @media only screen and (max-width: 768px) {
+    .list th, .list td {
+      padding: 5px;
+      font-size: 14px;
+    }
+    .list th {
+      position: relative;
+    }
+    .btn-edit, .btn-delete {
+      padding: 3px 5px;
+      font-size: 12px;
+    }
+  }
+  
+  @media only screen and (max-width: 480px) {
+    .list th, .list td {
+      padding: 3px;
+      font-size: 12px;
+    }
+    .btn-edit, .btn-delete {
+      padding: 2px 3px;
+      font-size: 10px;
+    }
+  }

@@ -1,0 +1,123 @@
+ <!-- <app-navigationbar></app-navigationbar>
+<main class="main-container">
+    <h2>Manage Guests</h2>
+
+    <div class="add-guest">
+        <h3>Add Guest</h3>
+        <form id="add-guest-form" #guestform="ngForm" (ngSubmit)="onSubmit(guestform)">
+            <input type="text" id="guest-name" placeholder="Enter guest name" name="guestname"  required  #guestname="ngModel" [(ngModel)]="formdata.name">
+            <div *ngIf="guestname.invalid && guestname.touched" class="error">
+                <span *ngIf="guestname.errors?.['required']">
+                    Name is Required.
+                </span>
+            </div>
+            <input type="email" name="guestemail" id="guest-email" placeholder="Enter guest email" required #guestemail="ngModel"  [(ngModel)]="formdata.email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+            <div *ngIf="guestemail.invalid && guestemail.touched" class="error">
+                <span *ngIf="guestemail.errors?.['pattern']">
+                    Invalid Email.
+                </span>
+                <span *ngIf="guestemail.errors?.['required']">
+                    Email is Required.
+                </span>
+            </div>
+            <select name="guestrsvp" id="guest-rsvp" required [(ngModel)]="formdata.guestrsvp">
+                <option value="Pending">Pending</option>
+                <option value="Accepted">Accepted</option>
+                <option value="Declined">Declined</option>
+            </select>
+            <button type="submit" class="add-button" [disabled]="guestform.invalid">Add Guest</button>
+        </form>
+    </div>
+    <div class="guest-list">
+        <h3>Guest List</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="guest-list-body">
+                <tr *ngFor="let guest of guests; index as i">
+                    <td>{{ guest.name }} </td>
+                    <td>{{ guest.email }}</td>
+                    <td>{{ guest.guestrsvp }}</td>
+                    <td>
+                        <button (click)="editGuest(i)">Edit</button>
+                        <button (click)="deleteGuest(i)">Delete</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="actions">
+        <button class="send-invites-button" >Send Invitations</button>
+        <p>Track RSVP responses in real-time.</p>
+    </div>
+</main> 
+
+ -->
+ <app-navigationbar></app-navigationbar>
+ <main class="main-container">
+     <h2>Manage Guests</h2>
+ 
+     <div class="add-guest">
+         <h3>Add Guest</h3>
+         <form id="add-guest-form" #guestform="ngForm" (ngSubmit)="onSubmit(guestform)">
+             <input type="text" id="guest-name" placeholder="Enter guest name" name="guestname" required #guestname="ngModel" [(ngModel)]="formdata.name">
+             <div *ngIf="guestname.invalid && guestname.touched" class="error">
+                 <span *ngIf="guestname.errors?.['required']">
+                     Name is Required.
+                 </span>
+             </div>
+             <input type="email" name="guestemail" id="guest-email" placeholder="Enter guest email" required #guestemail="ngModel" [(ngModel)]="formdata.email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+             <div *ngIf="guestemail.invalid && guestemail.touched" class="error">
+                 <span *ngIf="guestemail.errors?.['pattern']">
+                     Invalid Email.
+                 </span>
+                 <span *ngIf="guestemail.errors?.['required']">
+                     Email is Required.
+                 </span>
+             </div>
+             <select name="guestrsvp" id="guest-rsvp" required [(ngModel)]="formdata.guestrsvp">
+                 <option value="Pending">Pending</option>
+                 <option value="Accepted">Accepted</option>
+                 <option value="Declined">Declined</option>
+             </select>
+             <button type="submit" class="add-button" [disabled]="guestform.invalid">Add Guest</button>
+         </form>
+     </div>
+     <div class="guest-list">
+         <h3>Guest List</h3>
+         <table>
+             <thead>
+                 <tr>
+                     <th>Name</th>
+                     <th>Email</th>
+                     <th>Status</th>
+                     <th>Actions</th>
+                 </tr>
+             </thead>
+             <tbody id="guest-list-body">
+                 <tr *ngFor="let guest of guests; index as i">
+                     <td>{{ guest.name }} </td>
+                     <td>{{ guest.email }}</td>
+                     <td>{{ guest.guestrsvp }}</td>
+                     <td>
+                         <button (click)="editGuest(i)">Edit</button>
+                         <button (click)="deleteGuest(i)">Delete</button>
+                     </td>
+                 </tr>
+             </tbody>
+         </table>
+     </div>
+ 
+     <div class="actions">
+         <button class="send-invites-button" (click)="sendInvitations()">Send Invitations</button>
+         <p>Track RSVP responses in real-time.</p>
+     </div>
+ </main>
+ 

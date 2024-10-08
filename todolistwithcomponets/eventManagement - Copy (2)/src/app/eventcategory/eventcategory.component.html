@@ -1,0 +1,37 @@
+<app-navigationbar></app-navigationbar>
+<main class="main-container">
+    <div class="form-container">
+        <h2>Add New Category</h2>
+        <form (submit)="addCategory(); $event.preventDefault()">
+            <div class="form-group">
+                <label for="category-name">Category Name</label>
+                <input type="text" id="category-name" name="categoryName" [(ngModel)]="categoryName" placeholder="Enter category name" required>
+            </div>
+            <button type="submit" class="submit-button">Add Category</button>
+            <div *ngIf="errorMessage" id="category-error" class="error-message">{{ errorMessage }}</div>
+        </form>
+    </div>
+    <div class="category-list-container">
+        <h2>Event Categories</h2>
+        <table class="category-table">
+            <thead>
+                <tr>
+                    <th>Category Name</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let category of categories">
+                    <td>{{ category }}</td>
+                    <td><button class="edit-button" (click)="editCategory(category)">Edit</button>
+                    <button class="delete-button" (click)="deleteCategory(category)">Delete</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <a>
+<button routerLink="/admindashboard" routerLinkActive="active">Back</button>
+    </a>
+    
+</main>
+

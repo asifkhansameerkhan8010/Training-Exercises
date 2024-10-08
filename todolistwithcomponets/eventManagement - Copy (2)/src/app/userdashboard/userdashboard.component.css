@@ -1,0 +1,306 @@
+.main-container {
+    padding: 1.5rem;
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.add-event-button {
+    position: fixed;
+    right: 10px;
+    z-index: 10000;
+    top:75px;
+    background-color:rgb(41, 211, 7);
+    color:white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.add-event-fab {
+    display: none; 
+    background-color: rgb(41, 211, 7);
+    color: white;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    position: fixed;
+    bottom: 40px;
+    left: 20px;
+    z-index: 3000;
+    font-size: 1.5rem;
+    text-align: center;
+    cursor: pointer;
+}
+
+.search-filter-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    padding: 0.5rem 0;
+}
+
+.search-bar, .filter-date, .filter-category, .filter-status {
+    padding: 0.5rem;
+    border: 1px solid #31473A; 
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+
+.events-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    width: 100%;
+}
+
+.event-card {
+    background-color: white;
+    border: 1px solid #31473A; 
+    border-radius: 5px;
+    padding: 1rem;
+    position: relative;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    overflow: hidden;
+}
+
+.event-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+}
+
+.event-card h3 {
+    margin-top: 0;
+    font-size: 1.2rem;
+}
+
+.event-card p {
+    margin: 0.5rem 0;
+    overflow: hidden;
+    text-overflow: ellipsis; 
+    white-space: nowrap;
+}
+
+.event-card p {
+    margin: 0.5rem 0;
+    overflow: hidden;
+    text-overflow: ellipsis; 
+    white-space: nowrap;
+}
+
+.event-card button {
+    background-color: #4c93af; 
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    margin: 1px;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background-color 0.3s;
+}
+
+.event-card button:hover {
+    background-color: #357aab; 
+}
+
+.plan{
+    color: yellow;
+    font-size: larger;
+    font-weight: 500;
+}
+.final{
+    color:Green;
+    font-size: larger;
+    font-weight: 500;
+}
+.cancel{
+    color:red;
+    font-size: larger;
+    font-weight: 500;
+}
+
+@media screen and (max-width: 700px) {
+    .add-event-button {
+        display: none;
+    }
+
+    .add-event-fab {
+        display: block; 
+    }
+}
+
+@media (max-width: 1200px) {
+    .events-list {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 900px) {
+    .events-list {
+        grid-template-columns: repeat(2, 1fr); 
+    }
+}
+
+@media (max-width: 800px)
+{
+    .desktop{
+        display: none;
+    }
+    .add-event-fab{
+        display: block;
+    }
+}
+@media (max-width: 600px) {
+    .events-list {
+        grid-template-columns: 1fr;
+    }
+    #username-display{
+        display: none;
+    }
+    
+}
+.modal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5); /* Transparent background */
+  }
+  
+  .modal-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 600px; /* Set a maximum width for larger screens */
+    width: 100%;
+    max-height: 80vh; /* Set a maximum height */
+    overflow-y: auto; /* Allow scrolling if content exceeds max-height */
+    box-sizing: border-box;
+    position: relative;
+    margin: auto; /* Center the modal horizontally */
+  }
+  
+  /* Close button */
+  .close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    color: #aaa;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  /* Input styling */
+  .modal-content form label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+  }
+  
+  .modal-content form input,
+  .modal-content form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
+  .modal-content form input[type="time"] {
+    width: 100%;
+  }
+  
+  .save-button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+  }
+  
+  .save-button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Agenda section */
+  .modal-content h3 {
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  .modal-content p {
+    font-size: 16px;
+    color: #333;
+  }
+  
+  /* Media Queries for smaller screens */
+  @media (max-width: 768px) {
+    .modal-content {
+      max-width: 90%; /* Reduce modal width on smaller screens */
+    }
+  
+    .save-button {
+      font-size: 16px;
+      padding: 8px 16px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .modal-content {
+      max-width: 95%; /* Adjust for very small screens */
+    }
+  
+    .close {
+      top: 10px;
+      right: 15px;
+      font-size: 20px;
+    }
+  
+    .modal-content form label {
+      font-size: 14px;
+    }
+  
+    .modal-content form input,
+    .modal-content form textarea {
+      padding: 8px;
+      font-size: 14px;
+    }
+  
+    .save-button {
+      padding: 8px;
+      font-size: 14px;
+    }
+  
+    .modal-content h3 {
+      font-size: 16px;
+    }
+  
+    .modal-content p {
+      font-size: 14px;
+    }
+  }
+  

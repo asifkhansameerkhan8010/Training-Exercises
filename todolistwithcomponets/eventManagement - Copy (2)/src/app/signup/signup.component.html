@@ -1,0 +1,35 @@
+<div class="container">
+    <h1>Create an Account</h1>
+    <form id="signup-form" #addeventform="ngForm" (ngSubmit)="onSubmit(addeventform)">
+      <label for="username">Username:</label>
+      <input type="text" id="username" name="username" placeholder="Username" required [(ngModel)]="formData.username" #username="ngModel" pattern="^[a-zA-Z]+.+" minlength="5">
+      <div *ngIf="username.invalid && username.touched" class="error" >
+        <span *ngIf="username.errors?.['minlength']">Username Should be more than 5 characters</span>
+        <span *ngIf="username.errors?.['required']">Username is Required</span>
+        <span *ngIf="username.errors?.['pattern']">Username Should contain Alphanumeric letters</span>
+      </div>
+
+      <label for="email">Email:</label>
+      <input type="email" name="email" id="email" placeholder="Email" required [(ngModel)]="formData.email" #email="ngModel" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" >
+      <div *ngIf="email.invalid && email.touched" class="error">
+        <span *ngIf="email.errors?.['pattern']">Email is not Valid</span>
+        <span *ngIf="email.errors?.['required']">Email is Required</span>
+      </div>
+  
+      <label for="password">Password:</label>
+      <input type="password" name="password" id="password" placeholder="Password" required [(ngModel)]="formData.password" #password="ngModel" pattern="^(?=.*[a-zA-Z])(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,}$">
+      <div *ngIf="password.invalid && password.touched" class="error">
+        <span *ngIf="password.errors?.['required']">Password is required</span>
+        <span *ngIf="password.errors?.['pattern']">Password is atleast 8 characterc should contain alphanumeric characters and also special character</span>
+      </div>
+  
+      <label for="confirm-password">Confirm Password:</label>
+      <input type="password" name="cnfrm_password" id="confirm-password" placeholder="Confirm Password" required [(ngModel)]="formData.cnfrm_password" #cnfrm_password="ngModel">
+      <div *ngIf="cnfrm_password.invalid && cnfrm_password.touched" class="error">Password confirmation is required.</div>
+  
+      <button type="submit" >Sign Up</button>
+      <div id="signup-error" *ngIf="signupError" style="color: red;">{{ signupError }}</div>
+    </form>
+    <p>Already have an account?  <a routerLink="/login" routerLinkActive="active">Login</a></p>
+  </div>
+  

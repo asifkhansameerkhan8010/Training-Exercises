@@ -1,0 +1,86 @@
+<!-- <header class="header" *ngIf=" role == 'admin'">
+    <div class="header-container">
+        <h1>Admin</h1>
+        <nav class="nav">
+            <a routerLink="/category">Category</a>
+            <button id="logout-button"  (click)="this.authservice.logout()">Logout</button>
+            <button id="backup-button" (click)="this.backupservice.backupData()">Backup</button>
+            <input type="file" id="restore-file-input" (change)="this.backupservice.restoreData($event)" accept=".json" style="display: none;">
+            <button id="restore-button" (click)="this.backupservice.triggerFileInput()">Restore</button>
+        </nav>
+    </div>
+</header>
+
+<header class="header" *ngIf=" role == 'user'">
+    <div class="header-container">
+        <h1 class="logo">EM</h1>
+        <nav class="nav">
+            <a routerLink="/userdashboard" routerLinkActive="active">Dashboard</a>
+            <button id="logout-button"  (click)="this.authservice.logout()">Logout</button>
+            <div id="username-display">{{ username }}</div> 
+
+            <div class="notification-icon" (click)="toggleNotificationDropdown()">
+                <i class="fa-solid fa-envelope"></i>
+                <span *ngIf="unreadCount > 0" class="notification-count">{{ unreadCount }}</span>
+            </div>
+            
+
+
+              <div *ngIf="showDropdown" class="notification-dropdown" [ngClass]="{'show': showDropdown}">
+                <ul>
+                    <li *ngFor="let notification of notifications">
+                        {{ notification.message }} - {{ notification.date | date:'short' }}
+                        <div>
+                            <button (click)="respondToInvitation(notification, true)">Accept</button>
+                            <button (click)="respondToInvitation(notification, false)">Reject</button>
+                          </div>
+                    </li>
+                </ul>
+            </div>            
+        </nav>
+    </div>
+</header> -->
+
+
+<header class="header" *ngIf="role == 'admin'">
+    <div class="header-container">
+        <h1>Admin</h1>
+        <nav class="nav">
+            <a routerLink="/category">Category</a>
+            <button id="logout-button" (click)="authservice.logout()">Logout</button>
+            <button id="backup-button" (click)="backupservice.backupData()">Backup</button>
+            <input type="file" id="restore-file-input" (change)="backupservice.restoreData($event)" accept=".json" style="display: none;">
+            <button id="restore-button" (click)="backupservice.triggerFileInput()">Restore</button>
+        </nav>
+    </div>
+</header>
+
+<header class="header" *ngIf="role == 'user'">
+    <div class="header-container">
+        <h1 class="logo">EM</h1>
+        <nav class="nav">
+            <a routerLink="/userdashboard" routerLinkActive="active">Dashboard</a>
+            <button id="logout-button" (click)="authservice.logout()">Logout</button>
+            <div id="username-display">{{ username }}</div> 
+
+            <div class="notification-icon" (click)="toggleNotificationDropdown()">
+                <i class="fa-solid fa-envelope"></i>
+                <span *ngIf="unreadCount > 0" class="notification-count">{{ unreadCount }}</span>
+            </div>
+
+            <div *ngIf="showDropdown" class="notification-dropdown" [ngClass]="{'show': showDropdown}">
+                <ul>
+                    <li *ngFor="let notification of notifications; let i = index">
+                        {{ notification.message }} - {{ notification.date | date:'short' }}
+                        <div>
+                            <button (click)="respondToInvitation(notification, true)">Accept</button>
+                            <button (click)="respondToInvitation(notification, false)">Reject</button>
+                            <button (click)="markAsRead(i)">Mark as Read</button>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+</header>
+

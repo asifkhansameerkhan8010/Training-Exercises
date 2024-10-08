@@ -1,0 +1,39 @@
+<app-navigationbar></app-navigationbar>
+<main class="main-container">
+    <div class="event-form-container">
+        <h2 >{{isEditMode?'Edit Event':'Add Event'}}</h2>
+        <form (ngSubmit)="onSubmit()">
+            <div class="form-group">
+                <label for="event-name">Event Name:</label>
+                <input type="text" id="event-name" [(ngModel)]="eventName" name="eventName" placeholder="Enter event name" required>
+            </div>
+            <div class="form-group">
+                <label for="event-date">Event Date and Time:</label>
+                <input type="datetime-local" id="event-date" [min]="start" [(ngModel)]="eventDate" name="eventDate" required>
+            </div>
+            <div class="form-group">
+                <label for="location">Location:</label>
+                <input type="text" id="location" [(ngModel)]="location" name="location" placeholder="Enter event location" required>
+            </div>
+            <div class="form-group">
+                <label for="event-description">Event Description:</label>
+                <textarea id="event-description" [(ngModel)]="eventDescription" name="eventDescription" placeholder="Enter event description" rows="4"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="event-status">Event Status:</label>
+                <select id="event-status" [(ngModel)]="eventStatus" name="eventStatus">
+                    <option value="planning">Planning</option>
+                    <option value="finalized">Finalized</option>
+                    <option value="canceled">Canceled</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="event-category">Event Category:</label>
+                <select id="event-category" [(ngModel)]="eventCategory" name="eventCategory">
+                    <option *ngFor="let category of categories" [value]="{category}">{{ category }}</option>
+                </select>
+            </div>
+            <button type="submit" class="save-button">{{submitBtn}}</button>
+        </form>
+    </div>
+</main>

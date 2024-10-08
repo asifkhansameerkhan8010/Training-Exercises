@@ -1,0 +1,59 @@
+<header class="header" *ngIf="role === 'admin'">
+    <div class="header-container">
+        <h1>Admin</h1>
+        <nav class="nav">
+            <a routerLink="/category">Category</a>
+            <!-- <button id="logout-button" (click)="this.authservice.logout()">Logout</button> -->
+            
+            <!-- <button id="backup-button" (click)="this.backupservice.backupData()">Backup</button> -->
+            <i class="fa-solid fa-boxes-packing" (click)="this.backupservice.backupData()"></i>
+            <input type="file" id="restore-file-input" (change)="this.backupservice.restoreData($event)" accept=".json" style="display: none;">
+            <!-- <button id="restore-button" ></button> -->
+            <i class="fa-solid fa-window-restore" (click)="this.backupservice.triggerFileInput()"></i>
+            <!-- <button id="his" (click)="routetoHis()"></button> -->
+            <i class="fa-solid fa-clock-rotate-left" (click)="routetoHis()" ></i>
+            <i  (click)="this.authservice.logout()" class="fa-solid fa-arrow-right-from-bracket"></i>
+        </nav>
+    </div>
+</header>
+
+<header class="header" *ngIf="role === 'user'">
+    <div class="header-container">
+        <h1 class="logo">EM</h1>
+        <nav class="nav">
+            <a routerLink="/userdashboard" routerLinkActive="active">Dashboard</a>
+            <!-- <button id="logout-button" (click)="this.authservice.logout()">Logout</button> -->
+             
+            <i  (click)="this.authservice.logout()" class="fa-solid fa-arrow-right-from-bracket"></i>
+
+           
+            <!-- <div id="username-display">{{ username }}</div> -->
+
+            <i class="fa-solid fa-user" (click)="toggleUsernameDisplay()"></i>
+
+             <div id="username-box" *ngIf="showUsername" class="username-box"> {{ username }}</div>
+
+            <div class="notification-icon" (click)="showdropdown()">
+                <i class="fa-solid fa-envelope" ></i>
+                <span class="notification-count">{{ unreadCount }}</span>
+            </div>
+
+            <div class="notification-dropdown" [ngClass]="{ 'visible': dropdown }">
+                <ul *ngIf="invitations.length > 0; else noInvitations">
+                    <li *ngFor="let invitation of invitations">
+                        You was invited by {{ invitation.sentBy }}.
+                        <div><strong>Event Name:</strong>{{this.authservice.getEventTitle(invitation.sentBy,invitation.eventId) }}</div>
+                        <div><strong>Status:</strong> {{ invitation.status }}</div> 
+                        <div *ngIf="invitation.status == 'pending'"> 
+                            <button id="accept-btn" (click)="acceptInvitation(invitation)">Accept</button>
+                            <button id="reject-btn" (click)="rejectInvitation(invitation)">Reject</button>
+                        </div>
+                    </li>
+                </ul>
+                <ng-template #noInvitations>
+                    <li>No invitations available.</li>
+                </ng-template>
+            </div>
+        </nav>
+    </div>
+</header>

@@ -1,0 +1,61 @@
+<app-navigationbar></app-navigationbar>
+<button id="adduser" (click)="toggleForm()">Add User</button>
+
+<main class="main-container">
+    <div class="form-container" id="form-container" *ngIf="showForm">
+        <h2>Add New User</h2>
+        <form id="add-user-form" #addform="ngForm" (ngSubmit)="onSubmit(addform)">
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" [(ngModel)]="formdata.username" required placeholder="Enter username">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" [(ngModel)]="formdata.email" required placeholder="Enter email">
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password"  [(ngModel)]="formdata.password" required placeholder="Enter password">
+                </div>
+                <div class="form-group">
+                    <label for="confirm-password">Confirm Password</label>
+                    <input type="password" id="confirm-password" name="confirmPassword" [(ngModel)]="formdata.confirmPassword" required placeholder="Confirm password">
+                </div>
+                <div class="form-group">
+                    <label for="role">Role</label>
+                    <select id="role" name="role" [(ngModel)]="formdata.role" required>
+                        <option value="user">User</option>
+                        <option value="admin">Admin</option>
+                    </select>
+                </div>
+                <button type="submit" class="submit-button" (click)="toggleForm()">Add User</button>
+                <div id="signup-error" class="error-message">{{errorMessage}}</div>
+            </form>
+    </div>
+
+    <div class="user-list-container">
+        <h2>Registered Users</h2>
+        <table class="user-table">
+            <thead>
+                <tr>
+                    <th>Username</th>
+                    <th>Email</th>
+                    <th>Role</th>
+                    <th>Actions</th> 
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let user of users">
+                    <td>{{ user.username }}</td>
+                    <td>{{ user.email }}</td>
+                    <td>{{ user.role }}</td>
+                    <td>
+                        <button class="edit-button" (click)="editUser(user.email)">Edit</button>
+                        <button class="delete-button" (click)="deleteUser(user.email)">Delete</button>
+                    </td> 
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div id="signup-error" class="error-message">{{error}}</div>
+</main>

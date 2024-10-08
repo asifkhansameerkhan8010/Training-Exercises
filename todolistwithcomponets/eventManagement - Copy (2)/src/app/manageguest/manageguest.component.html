@@ -1,0 +1,74 @@
+ <app-navigationbar></app-navigationbar>
+<main class="main-container">
+    <h2>Manage Guests</h2>
+
+    <div class="add-guest">
+        <h3>Add Guest</h3>
+        <form id="add-guest-form" #guestform="ngForm" (ngSubmit)="onSubmit(guestform)">
+            <input type="text" id="guest-name" placeholder="Enter guest name" name="guestname"  required  #guestname="ngModel" [(ngModel)]="formdata.name">
+            <div *ngIf="guestname.invalid && guestname.touched" class="error">
+                <span *ngIf="guestname.errors?.['required']">
+                    Name is Required.
+                </span>
+            </div>
+            <input type="email" name="guestemail" id="guest-email" placeholder="Enter guest email" required #guestemail="ngModel"  [(ngModel)]="formdata.email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+            <div *ngIf="guestemail.invalid && guestemail.touched" class="error">
+                <span *ngIf="guestemail.errors?.['pattern']">
+                    Invalid Email.
+                </span>
+                <span *ngIf="guestemail.errors?.['required']">
+                    Email is Required.
+                </span>
+            </div>
+            <button type="submit" class="add-button" [disabled]="guestform.invalid">Add Guest</button>
+        </form>
+    </div>
+   
+    <div class="guest-list">
+        <h3>Guest List</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="guest-list-body">
+                <tr *ngFor="let guest of guests; index as i">
+                    <td>{{ guest.name }} </td>
+                    <td>{{ guest.email }}</td>
+                    <td>{{ guest.guestrsvp }}</td>
+                    <td>
+                        <!-- <button (click)="editGuest(i)">Edit</button> -->
+                        <i class="fa-solid fa-user-pen" (click)="editGuest(i)"></i>
+                        <!-- <button (click)="deleteGuest(i)">Delete</button> -->
+                        <i class="fa-solid fa-user-minus" (click)="deleteGuest(i)"></i>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="actions">
+        <button class="send-invites-button" (click)="eventId ? sendInvitation(eventId) : null">Send Invitations</button>
+        <p>Track RSVP responses in real-time.</p>
+    </div>
+    <div class="statusresponse">
+        <span style="color: green;">
+            <i class="fa-solid fa-thumbs-up"></i>
+            <span style="font-size: 2rem;">{{ getAcceptedCount() }}</span>
+        </span>
+        <span style="color: red;">
+            <i class="fa-solid fa-thumbs-down"></i>
+            <span style="font-size: 2rem;">{{ getRejectedCount() }}</span>
+        </span>
+        <span style="color:yellow">
+            <i class="fa-solid fa-clock" ></i>
+            <span style="font-size: 2rem;">{{ getPendingCount() }}</span>
+        </span>
+    </div>
+</main> 
+
+

@@ -1,0 +1,65 @@
+/* backup-history.component.css */
+.backup-history-container {
+    max-width: 90%;
+    margin: 0 auto;
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+  }
+  
+  h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .backup-history-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+  }
+  
+  .backup-history-table th,
+  .backup-history-table td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+  }
+  
+  .backup-history-table th {
+    background-color: #f4f4f4;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .backup-history-table td {
+    color: #555;
+  }
+  
+  .no-backup {
+    text-align: center;
+    color: #888;
+    font-size: 1.2rem;
+  }
+  
+  @media (max-width: 768px) {
+    .backup-history-table th,
+    .backup-history-table td {
+      padding: 8px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .backup-history-container {
+      max-width: 100%;
+    }
+  
+    .backup-history-table th, .backup-history-table td {
+      font-size: 0.9rem;
+    }
+  
+    h2 {
+      font-size: 1.5rem;
+    }
+  }
+  

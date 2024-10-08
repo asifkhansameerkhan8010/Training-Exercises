@@ -1,0 +1,163 @@
+.header {
+    background-color: #4c93af; 
+    color: white;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    box-sizing: border-box;
+    z-index: 1000;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 0 15px;
+    width: 100%;
+}
+.nav {
+    display: flex;
+    gap: 1rem; 
+}
+.nav a, #logout-button {
+    color: white; 
+    text-decoration: none;
+    font-weight: 500;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+}
+#username-display{
+    color: black;
+}
+.logo{
+    margin: 0;
+}
+
+.notification-icon {
+    position: relative;
+    cursor: pointer;
+}
+
+.notification-count {
+    position: absolute;
+    top: -10px; /* Adjust as needed to position above the icon */
+    right: -10px; /* Adjust to position it correctly */
+    background-color: red; /* A bright color to ensure visibility */
+    color: white; /* Text color */
+    border-radius: 50%; /* Round shape */
+    padding: 2px 6px; /* Adjust padding */
+    font-size: 12px; /* Font size */
+    font-weight: bold; /* Optional: make it bold */
+
+}
+
+.notification-dropdown {
+  position: absolute;
+  background-color: white;
+  border-radius: 5px;
+  top:50px;
+  right:20px;
+  border: 1px solid #ccc;
+  width: 300px;
+  padding: 10px;
+  display: none;
+  box-shadow:  0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+.notification-dropdown ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.notification-dropdown li {
+  padding: 5px 0;
+  color: black;
+}
+
+.notification-dropdown.visible {
+  display: block; 
+}
+
+.notification-icon {
+  position: relative;
+  cursor: pointer;
+}
+
+.notification-icon i {
+  font-size: 24px;
+  margin-right: 10px;
+ 
+}
+
+.fa-arrow-right-from-bracket{
+  font-size: 1.5rem;
+ color: black;
+}
+.fa-user{
+  font-size: 1.5rem;
+}
+
+.fa-arrow-right-from-bracket:hover{
+  cursor: pointer;
+}
+.notification-count {
+  background-color: red;
+  color: white;
+  border-radius: 50%;
+  padding: 2px 6px;
+  font-size: 12px;
+  position: absolute;
+  top: -5px;
+  right: -5px;
+}
+
+.username-box {
+  font-size: small;
+  position: absolute;
+  background-color: #f8f9fa;
+  text-wrap: wrap;
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 5px;
+  top: 58%; 
+  right: 2%; 
+  z-index: 10;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow */
+  width: fit-content;
+  text-align: center;
+  color: black;
+}
+.fa-solid {
+  font-size: 1.5rem;
+  color: black;
+}
+
+.fa-window-restore{
+  color: gold;
+}
+.fa-boxes-packing{
+  color: rgb(5, 207, 5);
+}
+#accept-btn{
+  background-color: green;
+  border: none;
+  color: white;
+  border-radius: 5px;
+  padding: 5px;
+  margin-right: 4px;
+}
+#reject-btn{
+  background-color: rgb(243, 0, 0);
+  border: none;
+  color: white;
+  border-radius: 5px;
+  padding: 5px;
+}

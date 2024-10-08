@@ -1,0 +1,87 @@
+<app-navigationbar></app-navigationbar>
+<main class="main-container">
+    <button class="add-event-button desktop" (click)="addevent()">Add Event</button>
+    <button class="add-event-fab mobile" (click)="addevent()">+</button>
+   
+  <div class="search-filter-bar">
+    <input type="text" class="search-bar" placeholder="Search events..." [(ngModel)]="searchTerm" (keyup)="filterEvents()">
+<select class="filter-date" [(ngModel)]="dateFilter" (ngModelChange)="filterEvents()">
+    <option value="">Filter by Date</option>
+    <option value="today">Today</option>
+    <option value="week">This Week</option>
+    <option value="month">This Month</option>
+</select>
+<select class="filter-category" [(ngModel)]="categoryFilter" (ngModelChange)="filterEvents()">
+    <option selected value="">Filter by Category</option>
+    <option *ngFor="let categorie of categories">
+    {{categorie}}
+    </option>
+   
+</select>
+<select class="filter-status" [(ngModel)]="statusFilter" (change)="filterEvents()">
+    <option value="">Filter by Status</option>
+    <option value="planning">Planning</option>
+    <option value="finalized">Finalized</option>
+    <option value="canceled">Canceled</option>
+</select>
+
+</div>
+    <div class="events-list"   id="events-list" *ngIf="filteredEvents.length > 0; else noEvents">
+        <div class="event-card" *ngFor="let event of filteredEvents">
+            <h3>{{ event.title }}</h3>
+            <p>Date: {{ event.date }}</p>
+            <p>Location: {{ event.location }}</p>
+            <p>Description: {{ event.description }}</p>
+            <p>Status:<span [ngClass]="{
+                'plan': event.status == 'planning',
+                'cancel': event.status =='canceled',
+                'final': event.status == 'finalized'
+            }" >{{ event.status }}</span></p>
+            <p>Category: {{ event.category }}</p>
+            <button (click)="editEvent(event.id)">Edit</button>
+            <button (click)="deleteEvent(event.id)">Delete</button>
+            <button (click)="viewDetails(event.id)">{{isDetailspresent?'Add Agenda':'View Details'}}</button>
+            <button (click)="manageGuests(event.id)">Manage Guest</button>
+        </div>
+    </div>
+
+    <ng-template #noEvents>
+        <p>No events found. Please add some events!</p>
+    </ng-template>
+    @if(showform) {
+        <div class="modal" id="detailsModal">
+          <div class="modal-content">
+            <span class="close" (click)="closeModal()">&times;</span>
+            <h2>Event Details</h2>
+            <form #detailsForm="ngForm">
+              <label for="start-time">Start Time</label>
+              <input type="time" id="start-time" [(ngModel)]="formagenda.start" name="start" required>
+      
+              <label for="end-time">End Time</label>
+              <input type="time" id="end-time" name="end" [(ngModel)]="formagenda.end" required>
+      
+              <label for="agenda">Agenda</label>
+              <textarea id="agenda" name="agenda" [(ngModel)]="formagenda.agenda" rows="4" placeholder="Enter event agenda"></textarea>
+      
+              <button type="button" class="save-button" [disabled]="detailsForm.invalid" (click)="saveEventDetails()">Save</button>
+            </form>
+          </div>
+        </div>
+      }
+      
+      @if(showagenda && formagenda.agenda) {
+        <div class="modal" id="detailsModal">
+          <div class="modal-content">
+            <span class="close" (click)="closeModal()">&times;</span>
+            <h2>Event Details</h2>
+            <div>
+              <h3>Agenda</h3>
+              <p>{{ formagenda.agenda }}</p>
+              <p>Start Time: {{ formagenda.start }}</p>
+              <p>End Time: {{ formagenda.end }}</p>
+              <button (click)="showform = true; showagenda = false;">Edit</button>
+            </div>
+          </div>
+        </div>
+      }
+</main>

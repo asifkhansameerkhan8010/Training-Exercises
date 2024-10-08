@@ -1,0 +1,25 @@
+<app-navigationbar></app-navigationbar>
+<div class="backup-history-container">
+    <h2>Backup History</h2>
+    <table class="backup-history-table">
+      <thead>
+        <tr>
+          <th>Backup Date</th>
+          <th>Backup By</th>
+          <th>File Name</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let backup of backupHistory">
+          <td>{{ backup.timestamp | date:'short' }}</td>
+          <td>{{ backup.by }}</td>
+          <td>{{ backup.fileName }}</td>
+        </tr>
+      </tbody>
+    </table>
+  
+    <div *ngIf="backupHistory.length === 0" class="no-backup">
+      No backup history found.
+    </div>
+  </div>
+  

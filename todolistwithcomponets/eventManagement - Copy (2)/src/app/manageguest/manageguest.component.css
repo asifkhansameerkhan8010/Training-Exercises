@@ -1,0 +1,152 @@
+.main-container {
+    flex-grow: 1;
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.add-guest, .guest-list {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.add-guest h3, .guest-list h3 {
+    margin-bottom: 10px;
+}
+
+
+#add-guest-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+input[type="text"], 
+input[type="email"] {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 0.9rem;
+}
+
+.add-button, .send-invites-button {
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    background-color:  #4c93af;
+    color: white;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.add-button:hover, .send-invites-button:hover {
+    background-color:  #4c93af;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+.guest-list{
+    overflow-x: scroll;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+#edit{
+    color: white;
+    background-color: #4c93af;
+    border: none;
+    padding: 7px;
+    border-radius:4px ;
+}
+
+#remove{
+    color: white;
+    background-color: red;
+    border: none;
+    padding: 7px;
+    border-radius:4px ;
+}
+
+.statusresponse {
+    display: flex;
+    justify-content: center;
+    gap: 40px; /* Space between the icons */
+    margin-top: 20px;
+}
+
+
+.fa-user-pen{
+    color: green;
+    font-size: 20px;
+    margin-right: 8px;
+}
+.fa-user-minus{
+    color:red;
+    font-size: 20px;
+}
+
+.statusresponse span {
+    font-size: 6rem; /* Large size for the icons */
+    display: inline-block;
+    transition: transform 0.3s ease-in-out; /* Animation effect on hover */
+}
+
+.statusresponse span:hover {
+    transform: scale(1.1); /* Slightly enlarge icon on hover */
+}
+
+.statusresponse .fa-thumbs-up {
+    color: green;
+}
+
+.statusresponse .fa-thumbs-down {
+    color: red;
+}
+
+.statusresponse .fa-clock {
+    color: yellow;
+}
+
+
+@media (max-width: 455px)
+{
+    .statusresponse span {
+        font-size: 4rem; /* Large size for the icons */
+        display: inline-block;
+        transition: transform 0.3s ease-in-out; /* Animation effect on hover */
+    }
+}
+@media (max-width: 395px)
+{
+    .statusresponse span {
+        font-size: 3rem; /* Large size for the icons */
+        display: inline-block;
+        transition: transform 0.3s ease-in-out; /* Animation effect on hover */
+    }
+}
+@media (max-width: 330px)
+{
+    .statusresponse span {
+        font-size: 2rem; /* Large size for the icons */
+        display: inline-block;
+        transition: transform 0.3s ease-in-out; /* Animation effect on hover */
+    }
+}

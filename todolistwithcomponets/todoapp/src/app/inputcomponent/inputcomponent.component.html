@@ -1,0 +1,23 @@
+<div class="main-container">
+    <h1>TODO LIST</h1>
+    <div class="form-container">
+        <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" id="name" class="name" [(ngModel)]="namegiven"  required>
+        </div>
+        <div class="form-group">
+            <label for="task">Task:</label>
+            <input type="text" id="task" class="task" [(ngModel)]="taskgiven" required>
+        </div>
+        <div class="form-group">
+            <label for="quantity">Quantity:</label>
+            <input type="number" id="quantity" class="quantity" [(ngModel)]="quans"  min="1" required>
+        </div>
+        <button class="addButton" (click)="addInfoUpdate()">{{editingItemId !=null ? 'Update':'Add'}} </button>
+    </div>
+    <app-todolist  [listcomponentlist]="getdata()"
+    (edit)="handleEdit($event)"
+    (delete)="handleDelete($event)">
+</app-todolist>
+</div>
+
